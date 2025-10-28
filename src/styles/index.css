@@ -53,3 +53,8 @@ h2{font-family:var(--font-heading);font-weight:600;color:var(--navy)}
 @media (max-width:768px){
   .container{padding:0 0.8rem}
 }
+
+/* Footer socials */
+.footer-socials a{color:var(--navy);display:inline-flex;align-items:center;transition:color 180ms, transform 160ms}
+.footer-socials a:hover{color:var(--blue-deep);transform:translateY(-3px)}
+.footer-socials svg{width:20px;height:20px;fill:currentColor}
