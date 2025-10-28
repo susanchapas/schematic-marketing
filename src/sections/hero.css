@@ -1,0 +1,10 @@
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(180deg,var(--mist),var(--cream));padding:2.5rem 0}
+.hero-grid{position:absolute;inset:0;opacity:0.25;background-image:linear-gradient(#EAF0FF 1px, transparent 1px), linear-gradient(90deg,#EAF0FF 1px, transparent 1px);background-size:60px 60px;mix-blend-mode:multiply}
+.hero-content{position:relative;padding:6rem 0 6rem;color:var(--navy)}
+.hero h1{font-size:clamp(1.8rem,4vw,3.2rem);line-height:1.05}
+.hero .lead{max-width:60ch;margin-top:1rem;color:var(--navy);opacity:0.9}
+
+@media (max-width:768px){
+  .hero{padding:2rem 0}
+  .hero-content{padding:3rem 0}
+}

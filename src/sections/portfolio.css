@@ -1,0 +1,6 @@
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.card{background:linear-gradient(180deg,white,var(--soft-blue));border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:160px;background:linear-gradient(135deg,var(--blue-light),var(--rose));}
+.meta{padding:1rem}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.thumb{height:140px}}
