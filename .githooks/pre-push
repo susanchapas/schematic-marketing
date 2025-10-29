@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[pre-push] Building production site into docs/"
+
+# Run the build (Vite configured to output to docs/)
+npm run build
+
+echo "[pre-push] Build finished. Checking for changes in docs/..."
+
+# Stage docs if there are changes
+if [[ -n "$(git status --porcelain docs)" ]]; then
+  echo "[pre-push] Detected changes in docs/. Creating commit"
+  git add docs
+  # Use --no-verify to avoid pre-commit hooks interfering
+  git commit -m "chore(build): update docs (pre-push)" --no-verify || true
+else
+  echo "[pre-push] No changes to docs/"
+fi
+
+echo "[pre-push] Ready to push."
+exit 0
