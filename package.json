@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "preinstall": "chmod +x .husky/pre-push",
+    "preinstall": "chmod +x .husky/pre-commit",
     "dev": "vite",
     "build": "vite build",
     "prepare": "husky install",

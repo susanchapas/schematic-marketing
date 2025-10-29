@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+echo "Running build before push..."
+npm run build || {
+	echo "\nBuild failed — aborting commit. Fix build errors and try again."
+	exit 1
+}
+
+if [ -n "$(git status --porcelain docs)" ]; then
+	echo "Built files changed in docs/ — committing them."
+	git add -A docs
+	git commit -m "chore: build" || true
+fi
+
+echo "Build check passed"
