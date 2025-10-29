@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "chmod +x .husky/pre-push",
     "dev": "vite",
     "build": "vite build",
+    "prepare": "husky install",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
-    "vite": "^5.1.0"
+    "vite": "^5.1.0",
+    "husky": "^8.0.0"
   }
 }

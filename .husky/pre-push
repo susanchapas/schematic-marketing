@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- \"$0\")/_/husky.sh"
+
+# Run the production build. If it fails, abort the push.
+echo "Running build before push..."
+npm run build || {
+	echo "\nBuild failed — aborting push. Fix build errors and try again."
+	exit 1
+}
+
+# If `docs` has changes after the build, commit and push them so the built files are included.
+if [ -n "$(git status --porcelain docs)" ]; then
+	echo "Built files changed in docs/ — committing and pushing them."
+	git add -A docs
+	# If there's nothing to commit (race), the commit command will exit non-zero; ignore that.
+	git commit -m "chore: build" || true
+	# Push the new commit immediately (skip hooks to avoid loops).
+	git push --no-verify || true
+fi
+
+echo "Build check passed. Proceeding with push."
