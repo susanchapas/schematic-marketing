@@ -49,6 +49,20 @@ h2{font-family:var(--font-heading);font-weight:600;color:var(--navy)}
 }
 .btn.secondary{background:transparent;color:var(--blue-deep);border-color:var(--blue-light)}
 
+/* Hover / interaction: scale buttons and cards slightly for emphasis */
+.btn, .card{
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  transform-origin: center;
+}
+.btn:hover, .btn:focus{
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(16,47,93,0.08);
+}
+.card:hover, .card:focus-within{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(16,47,93,0.06);
+}
+
 /* Responsive helpers */
 @media (max-width:768px){
   .container{padding:0 0.8rem}
