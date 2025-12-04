@@ -1,0 +1,265 @@
+.hero {
+  padding-top: var(--space-3xl);
+  background: linear-gradient(135deg, var(--color-vellum) 0%, var(--color-drafting) 100%);
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.heroContent h1 {
+  margin-bottom: var(--space-md);
+}
+
+.valuesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.valueCard {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+  padding: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .valueCard {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+
+  .valueCardAlt {
+    grid-template-columns: 1fr auto;
+  }
+
+  .valueCardAlt .valueIcon {
+    order: 2;
+  }
+
+  .valueCardAlt .valueContent {
+    order: 1;
+  }
+}
+
+.valueIcon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--color-cloud-blue) 0%, var(--color-drafting) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blueprint);
+  box-shadow: var(--shadow-extrude-sm);
+  flex-shrink: 0;
+}
+
+.valueIcon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.valueContent {
+  flex: 1;
+}
+
+.valueTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-blueprint);
+  margin-bottom: var(--space-xs);
+}
+
+.valueSubtitle {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  color: var(--color-deep-ink);
+  margin-bottom: var(--space-md);
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+.valueDescription {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.valuePrinciples {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-xs);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 480px) {
+  .valuePrinciples {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.valuePrinciples li {
+  position: relative;
+  padding-left: var(--space-md);
+  font-size: 0.9375rem;
+  color: var(--color-deep-ink);
+}
+
+.valuePrinciples li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-blueprint);
+  font-weight: 600;
+}
+
+.voiceSection {
+  background: var(--color-cloud-blue);
+}
+
+.voiceGrid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 640px) {
+  .voiceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.voiceCard {
+  padding: var(--space-lg);
+}
+
+.voiceCard h3 {
+  font-size: 1.25rem;
+  color: var(--color-deep-ink);
+  margin-bottom: var(--space-xs);
+}
+
+.voiceType {
+  font-size: 0.875rem;
+  color: var(--color-blueprint);
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.voiceCard p:last-child {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.actionWords {
+  text-align: center;
+}
+
+.actionWords h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-md);
+  color: var(--color-deep-ink);
+}
+
+.wordCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.actionWord {
+  background: var(--color-vellum);
+  color: var(--color-blueprint);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  box-shadow: var(--shadow-extrude-sm);
+}
+
+.commitmentsGrid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .commitmentsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.commitmentCard {
+  padding: var(--space-lg);
+}
+
+.commitmentCard h3 {
+  font-size: 1.125rem;
+  color: var(--color-blueprint);
+  margin-bottom: var(--space-sm);
+}
+
+.commitmentCard p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-deep-ink);
+  opacity: 0.85;
+}
+
+.ctaSection {
+  background: linear-gradient(135deg, var(--color-vellum) 0%, var(--color-rose-clay) 100%);
+}
+
+.ctaCard {
+  text-align: center;
+  padding: var(--space-2xl);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaCard h2 {
+  margin-bottom: var(--space-md);
+}
+
+.ctaCard p {
+  margin-bottom: var(--space-lg);
+  font-size: 1.125rem;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 480px) {
+  .ctaButtons {
+    flex-direction: row;
+  }
+}

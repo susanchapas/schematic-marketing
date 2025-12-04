@@ -1,0 +1,208 @@
+.hero {
+  padding-top: var(--space-3xl);
+  background: linear-gradient(135deg, var(--color-vellum) 0%, var(--color-rose-clay) 100%);
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.heroContent h1 {
+  margin-bottom: var(--space-md);
+}
+
+.contactGrid {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+}
+
+.formWrapper {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .formWrapper {
+    order: 1;
+  }
+}
+
+.sidebar {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    order: 2;
+    position: sticky;
+    top: calc(72px + var(--space-lg));
+  }
+}
+
+.contactInfo,
+.availability,
+.social {
+  padding: var(--space-lg);
+}
+
+.contactInfo h3,
+.availability h3,
+.social h3 {
+  font-size: 1.125rem;
+  color: var(--color-deep-ink);
+  margin-bottom: var(--space-md);
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.infoIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-blueprint);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.infoItem strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-deep-ink);
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+.infoItem a,
+.infoItem span {
+  color: var(--color-deep-ink);
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.infoItem a:hover {
+  color: var(--color-blueprint);
+}
+
+.availability p {
+  margin: 0 0 var(--space-sm) 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.responseTime {
+  font-size: 0.875rem;
+  color: var(--color-blueprint);
+  font-weight: 500;
+}
+
+.socialLinks {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--color-cloud-blue);
+  color: var(--color-blueprint);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+  min-height: 44px;
+}
+
+.socialLink:hover {
+  background: var(--color-drafting);
+  transform: translateY(-2px);
+}
+
+.socialLink svg {
+  width: 20px;
+  height: 20px;
+}
+
+.faqSection {
+  background: var(--color-cloud-blue);
+}
+
+.faqGrid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .faqGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.faqCard {
+  padding: var(--space-lg);
+}
+
+.faqCard h3 {
+  font-size: 1.0625rem;
+  color: var(--color-blueprint);
+  margin-bottom: var(--space-sm);
+}
+
+.faqCard p {
+  font-size: 0.9375rem;
+  color: var(--color-deep-ink);
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 0;
+}

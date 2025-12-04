@@ -1,0 +1,87 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+  min-height: 44px;
+  min-width: 44px;
+  border: none;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Variants */
+.button--primary {
+  background: var(--color-blueprint);
+  color: var(--color-canvas);
+  box-shadow: var(--shadow-button);
+}
+
+.button--primary:hover {
+  background: var(--color-deep-ink);
+  box-shadow: 0 8px 24px rgba(27, 70, 136, 0.25);
+}
+
+.button--secondary {
+  background: var(--color-vellum);
+  color: var(--color-deep-ink);
+  box-shadow: var(--shadow-extrude);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.button--secondary:hover {
+  box-shadow: var(--shadow-extrude-sm);
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--color-blueprint);
+  border: 2px solid var(--color-blueprint);
+  box-shadow: none;
+}
+
+.button--ghost:hover {
+  background: var(--color-blueprint);
+  color: var(--color-canvas);
+}
+
+/* Sizes */
+.button--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.button--md {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+}
+
+.button--lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Full Width */
+.button--full {
+  width: 100%;
+}

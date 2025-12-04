@@ -1,0 +1,9 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#bbcdf3"/>
+  <rect x="100" y="100" width="1000" height="550" fill="#f5f0e0" rx="16"/>
+  <path d="M400 400 Q500 200 600 400 Q700 600 800 400" stroke="#1b4688" stroke-width="3" fill="none"/>
+  <circle cx="400" cy="400" r="20" fill="#f5e2e0"/>
+  <circle cx="600" cy="400" r="20" fill="#f5e2e0"/>
+  <circle cx="800" cy="400" r="20" fill="#f5e2e0"/>
+  <text x="600" y="520" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" fill="#1b4688">Wellness Week</text>
+</svg>
