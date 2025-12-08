@@ -33,7 +33,7 @@ jobs:
       - name: Build and export static site
         run: |
           npm run build
-          npx next export -o docs
+          npx next export --outdir docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
