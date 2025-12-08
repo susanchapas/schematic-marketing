@@ -45,7 +45,7 @@
   display: inline-block;
   width: 18px;
   height: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(252, 249, 240, 0.3);
   border-top-color: #ffffff;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -82,7 +82,10 @@
   align-items: center;
   justify-content: center;
   color: var(--color-blueprint);
-  box-shadow: var(--shadow-extrude);
+  box-shadow:
+    4px 4px 10px rgba(209, 204, 192, 0.35),
+    -4px -4px 10px rgba(252, 249, 240, 0.7);
+  border: 1px solid rgba(252, 249, 240, 0.5);
 }
 
 .successTitle {

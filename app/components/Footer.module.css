@@ -64,7 +64,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(252, 249, 240, 0.1);
   border-radius: var(--radius-sm);
   color: var(--color-canvas);
   transition:
@@ -73,7 +73,7 @@
 }
 
 .socialLink:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(252, 249, 240, 0.2);
   transform: translateY(-2px);
 }
 
@@ -100,7 +100,7 @@
 }
 
 .navLink {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(252, 249, 240, 0.8);
   text-decoration: none;
   font-size: 0.9375rem;
   padding: var(--space-xs) 0;
@@ -116,7 +116,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(252, 249, 240, 0.05);
   padding: var(--space-md);
   border-radius: var(--radius-lg);
 }
@@ -130,7 +130,7 @@
 .footerBottom {
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(252, 249, 240, 0.1);
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);

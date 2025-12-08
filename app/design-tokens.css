@@ -21,13 +21,18 @@
   --radius-md: 12px;
   --radius-sm: 8px;
 
-  /* Neumorphic Shadows */
-  --neu-light: #ffffff;
-  --neu-dark: #d1ccc0;
-  --shadow-extrude: 9px 9px 18px var(--neu-dark), -9px -9px 18px var(--neu-light);
-  --shadow-extrude-sm: 5px 5px 10px var(--neu-dark), -5px -5px 10px var(--neu-light);
-  --shadow-inset: inset 6px 6px 12px var(--neu-dark), inset -6px -6px 12px var(--neu-light);
-  --shadow-button: 0 6px 18px rgba(27, 70, 136, 0.18);
+  /* Neumorphic Shadows - Soft paper-like feel with natural highlights */
+  --neu-light: rgba(252, 249, 240, 0.85); /* Warm off-white highlight */
+  --neu-dark: rgba(209, 204, 192, 0.35);
+  --shadow-extrude: 6px 6px 16px rgba(209, 204, 192, 0.4), -6px -6px 16px rgba(252, 249, 240, 0.85);
+  --shadow-extrude-sm:
+    4px 4px 10px rgba(209, 204, 192, 0.35), -4px -4px 10px rgba(252, 249, 240, 0.75);
+  --shadow-extrude-hover:
+    8px 8px 20px rgba(209, 204, 192, 0.45), -8px -8px 20px rgba(252, 249, 240, 0.9);
+  --shadow-inset:
+    inset 3px 3px 8px rgba(209, 204, 192, 0.4), inset -3px -3px 8px rgba(252, 249, 240, 0.7);
+  --shadow-button: 0 4px 12px rgba(27, 70, 136, 0.12);
+  --shadow-button-hover: 0 6px 16px rgba(27, 70, 136, 0.18);
 
   /* Grid */
   --grid-color: rgba(27, 70, 136, 0.05);

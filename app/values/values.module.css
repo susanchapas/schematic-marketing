@@ -69,7 +69,10 @@
   align-items: center;
   justify-content: center;
   color: var(--color-blueprint);
-  box-shadow: var(--shadow-extrude-sm);
+  box-shadow:
+    3px 3px 8px rgba(209, 204, 192, 0.3),
+    -3px -3px 8px rgba(252, 249, 240, 0.7);
+  border: 1px solid rgba(252, 249, 240, 0.5);
   flex-shrink: 0;
 }
 
@@ -197,7 +200,10 @@
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
   font-weight: 600;
-  box-shadow: var(--shadow-extrude-sm);
+  box-shadow:
+    3px 3px 8px rgba(209, 204, 192, 0.3),
+    -3px -3px 8px rgba(252, 249, 240, 0.7);
+  border: 1px solid rgba(252, 249, 240, 0.5);
 }
 
 .commitmentsGrid {

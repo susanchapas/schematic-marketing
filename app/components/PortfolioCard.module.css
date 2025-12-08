@@ -2,7 +2,7 @@
   background: var(--color-vellum);
   box-shadow: var(--shadow-extrude);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(252, 249, 240, 0.5);
   overflow: hidden;
   transition:
     transform var(--transition-normal),
@@ -10,10 +10,8 @@
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    12px 12px 24px var(--neu-dark),
-    -12px -12px 24px var(--neu-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-extrude-hover);
 }
 
 @media (prefers-reduced-motion: reduce) {

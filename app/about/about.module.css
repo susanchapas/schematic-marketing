@@ -152,7 +152,10 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-blueprint);
-  box-shadow: var(--shadow-extrude-sm);
+  box-shadow:
+    3px 3px 8px rgba(209, 204, 192, 0.3),
+    -3px -3px 8px rgba(252, 249, 240, 0.7);
+  border: 1px solid rgba(252, 249, 240, 0.5);
 }
 
 .teamName {
