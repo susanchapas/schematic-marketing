@@ -30,10 +30,21 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Build and export static site
+      - name: Build static site and prepare `docs/`
         run: |
           npm run build
-          npx next export --outdir docs
+          if [ -d out ]; then
+            rm -rf docs
+            mv out docs
+            echo "Moved 'out/' -> 'docs/'."
+          elif [ -d docs ]; then
+            echo "Using existing 'docs/' directory."
+          else
+            echo "ERROR: No static output found (no 'out/' and no 'docs/')."
+            echo "Ensure next.config.js sets \"output: 'export'\" or that your build creates a publishable 'docs/' directory."
+            ls -la || true
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
