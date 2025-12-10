@@ -1,19 +1,7 @@
 .hero {
   padding-top: var(--space-3xl);
-  background: linear-gradient(135deg, var(--color-vellum) 0%, var(--color-drafting) 100%);
+  background: linear-gradient(135deg, var(--bg-page) 0%, var(--bg-surface) 100%);
   position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.4;
-  pointer-events: none;
 }
 
 .heroContent {
@@ -26,6 +14,7 @@
 
 .heroContent h1 {
   margin-bottom: var(--space-md);
+  color: var(--text-primary);
 }
 
 .valuesGrid {
@@ -39,6 +28,9 @@
   gap: var(--space-lg);
   grid-template-columns: 1fr;
   padding: var(--space-xl);
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
 }
 
 @media (min-width: 768px) {
@@ -69,10 +61,8 @@
   align-items: center;
   justify-content: center;
   color: var(--color-blueprint);
-  box-shadow:
-    3px 3px 8px rgba(209, 204, 192, 0.3),
-    -3px -3px 8px rgba(252, 249, 240, 0.7);
-  border: 1px solid rgba(252, 249, 240, 0.5);
+  box-shadow: var(--shadow-extrude-sm);
+  border: 1px solid var(--border-subtle);
   flex-shrink: 0;
 }
 
@@ -88,14 +78,14 @@
 .valueTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-blueprint);
+  color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
 .valueSubtitle {
   font-family: var(--font-accent);
   font-size: 1.25rem;
-  color: var(--color-deep-ink);
+  color: var(--text-accent);
   margin-bottom: var(--space-md);
   transform: rotate(-1deg);
   display: inline-block;
@@ -105,6 +95,7 @@
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: var(--space-md);
+  color: var(--text-secondary);
 }
 
 .valuePrinciples {
@@ -126,19 +117,21 @@
   position: relative;
   padding-left: var(--space-md);
   font-size: 0.9375rem;
-  color: var(--color-deep-ink);
+  color: var(--text-secondary);
 }
 
 .valuePrinciples li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-blueprint);
+  color: var(--text-accent);
   font-weight: 600;
 }
 
 .voiceSection {
-  background: var(--color-cloud-blue);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .voiceGrid {
@@ -156,17 +149,20 @@
 
 .voiceCard {
   padding: var(--space-lg);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
 }
 
 .voiceCard h3 {
   font-size: 1.25rem;
-  color: var(--color-deep-ink);
+  color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
 .voiceType {
   font-size: 0.875rem;
-  color: var(--color-blueprint);
+  color: var(--text-accent);
   font-weight: 500;
   margin-bottom: var(--space-sm);
 }
@@ -175,6 +171,7 @@
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .actionWords {
@@ -184,7 +181,7 @@
 .actionWords h3 {
   font-size: 1.125rem;
   margin-bottom: var(--space-md);
-  color: var(--color-deep-ink);
+  color: var(--text-primary);
 }
 
 .wordCloud {
@@ -195,15 +192,13 @@
 }
 
 .actionWord {
-  background: var(--color-vellum);
-  color: var(--color-blueprint);
+  background: var(--bg-surface);
+  color: var(--text-primary);
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
   font-weight: 600;
-  box-shadow:
-    3px 3px 8px rgba(209, 204, 192, 0.3),
-    -3px -3px 8px rgba(252, 249, 240, 0.7);
-  border: 1px solid rgba(252, 249, 240, 0.5);
+  box-shadow: var(--shadow-extrude-sm);
+  border: 1px solid var(--border-subtle);
 }
 
 .commitmentsGrid {
@@ -220,11 +215,14 @@
 
 .commitmentCard {
   padding: var(--space-lg);
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
 }
 
 .commitmentCard h3 {
   font-size: 1.125rem;
-  color: var(--color-blueprint);
+  color: var(--text-primary);
   margin-bottom: var(--space-sm);
 }
 
@@ -232,12 +230,12 @@
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.6;
-  color: var(--color-deep-ink);
+  color: var(--text-secondary);
   opacity: 0.85;
 }
 
 .ctaSection {
-  background: linear-gradient(135deg, var(--color-vellum) 0%, var(--color-rose-clay) 100%);
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-page) 100%);
 }
 
 .ctaCard {
@@ -245,15 +243,21 @@
   padding: var(--space-2xl);
   max-width: 600px;
   margin: 0 auto;
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-highlight);
+  backdrop-filter: blur(12px);
 }
 
 .ctaCard h2 {
   margin-bottom: var(--space-md);
+  color: var(--text-primary);
 }
 
 .ctaCard p {
   margin-bottom: var(--space-lg);
   font-size: 1.125rem;
+  color: var(--text-secondary);
 }
 
 .ctaButtons {

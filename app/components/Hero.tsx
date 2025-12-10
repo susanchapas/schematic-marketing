@@ -23,7 +23,9 @@ export default function Hero({
   variant = 'home',
 }: HeroProps) {
   return (
-    <section className={`${styles.hero} ${variant === 'home' ? styles.heroHome : styles.heroPage}`}>
+    <section
+      className={`${styles.hero} ${variant === 'home' ? styles.heroHome : styles.heroPage} blueprint-bg`}
+    >
       <div className={styles.heroBackground} aria-hidden="true">
         <div className={styles.gridOverlay}></div>
         <div className={styles.watercolorAccent}></div>

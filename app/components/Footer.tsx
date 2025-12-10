@@ -20,7 +20,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} blueprint-bg`}>
       <div className="container">
         <div className={styles.footerGrid}>
           <div className={styles.footerBrand}>

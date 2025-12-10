@@ -1,19 +1,7 @@
 .hero {
   padding-top: var(--space-3xl);
-  background: linear-gradient(180deg, var(--color-vellum) 0%, var(--color-cloud-blue) 100%);
+  background: linear-gradient(180deg, var(--bg-page) 0%, var(--bg-surface) 100%);
   position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.4;
-  pointer-events: none;
 }
 
 .heroContent {
@@ -26,6 +14,7 @@
 
 .heroContent h1 {
   margin-bottom: var(--space-md);
+  color: var(--text-primary);
 }
 
 .storyGrid {
@@ -44,10 +33,12 @@
 .storyContent p {
   margin-bottom: var(--space-md);
   line-height: 1.7;
+  color: var(--text-secondary);
 }
 
 .storyContent h2 {
   margin-bottom: var(--space-lg);
+  color: var(--text-primary);
 }
 
 .storyVisual {
@@ -59,11 +50,14 @@
   font-size: 1.5rem;
   line-height: 1.4;
   transform: rotate(-1deg);
+  color: var(--text-primary);
 }
 
 .missionSection {
-  background: var(--color-blueprint);
-  color: var(--color-canvas);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .missionContent {
@@ -71,7 +65,7 @@
 }
 
 .missionContent h2 {
-  color: var(--color-canvas);
+  color: var(--text-primary);
   margin-bottom: var(--space-md);
 }
 
@@ -80,6 +74,7 @@
   max-width: 700px;
   margin: 0 auto var(--space-xl);
   line-height: 1.5;
+  color: var(--text-secondary);
 }
 
 .pillars {
@@ -106,13 +101,13 @@
 
 .pillar h3 {
   font-size: 1.125rem;
-  color: var(--color-blueprint);
+  color: var(--text-primary);
   margin-bottom: var(--space-sm);
 }
 
 .pillar p {
   font-size: 0.9375rem;
-  color: var(--color-deep-ink);
+  color: var(--text-secondary);
   opacity: 0.85;
   margin: 0;
 }
@@ -138,6 +133,9 @@
 .teamCard {
   text-align: center;
   padding: var(--space-lg);
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
 }
 
 .teamAvatar {
@@ -152,29 +150,27 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-blueprint);
-  box-shadow:
-    3px 3px 8px rgba(209, 204, 192, 0.3),
-    -3px -3px 8px rgba(252, 249, 240, 0.7);
-  border: 1px solid rgba(252, 249, 240, 0.5);
+  box-shadow: var(--shadow-extrude-sm);
+  border: 1px solid var(--border-subtle);
 }
 
 .teamName {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--color-deep-ink);
+  color: var(--text-primary);
   margin-bottom: var(--space-xs);
 }
 
 .teamRole {
   font-size: 0.875rem;
-  color: var(--color-blueprint);
+  color: var(--text-accent);
   font-weight: 500;
   margin-bottom: var(--space-sm);
 }
 
 .teamBio {
   font-size: 0.875rem;
-  color: var(--color-deep-ink);
+  color: var(--text-secondary);
   opacity: 0.85;
   line-height: 1.6;
   margin: 0;

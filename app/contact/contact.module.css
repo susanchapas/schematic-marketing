@@ -1,19 +1,7 @@
 .hero {
   padding-top: var(--space-3xl);
-  background: linear-gradient(135deg, var(--color-vellum) 0%, var(--color-rose-clay) 100%);
+  background: linear-gradient(135deg, var(--bg-page) 0%, var(--bg-surface) 100%);
   position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.4;
-  pointer-events: none;
 }
 
 .heroContent {
@@ -26,6 +14,7 @@
 
 .heroContent h1 {
   margin-bottom: var(--space-md);
+  color: var(--text-primary);
 }
 
 .contactGrid {
@@ -70,13 +59,16 @@
 .availability,
 .social {
   padding: var(--space-lg);
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
 }
 
 .contactInfo h3,
 .availability h3,
 .social h3 {
   font-size: 1.125rem;
-  color: var(--color-deep-ink);
+  color: var(--text-primary);
   margin-bottom: var(--space-md);
 }
 
@@ -113,31 +105,32 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--color-deep-ink);
+  color: var(--text-secondary);
   opacity: 0.7;
   margin-bottom: 2px;
 }
 
 .infoItem a,
 .infoItem span {
-  color: var(--color-deep-ink);
+  color: var(--text-primary);
   text-decoration: none;
   font-size: 0.9375rem;
 }
 
 .infoItem a:hover {
-  color: var(--color-blueprint);
+  color: var(--text-accent);
 }
 
 .availability p {
   margin: 0 0 var(--space-sm) 0;
   font-size: 0.9375rem;
   line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .responseTime {
   font-size: 0.875rem;
-  color: var(--color-blueprint);
+  color: var(--text-accent);
   font-weight: 500;
 }
 
@@ -150,8 +143,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  background: var(--color-cloud-blue);
-  color: var(--color-blueprint);
+  background: var(--bg-surface);
+  color: var(--text-primary);
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
   text-decoration: none;
@@ -161,10 +154,11 @@
     background var(--transition-fast),
     transform var(--transition-fast);
   min-height: 44px;
+  border: 1px solid var(--border-subtle);
 }
 
 .socialLink:hover {
-  background: var(--color-drafting);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -174,7 +168,8 @@
 }
 
 .faqSection {
-  background: var(--color-cloud-blue);
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .faqGrid {
@@ -191,17 +186,20 @@
 
 .faqCard {
   padding: var(--space-lg);
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
 }
 
 .faqCard h3 {
   font-size: 1.0625rem;
-  color: var(--color-blueprint);
+  color: var(--text-primary);
   margin-bottom: var(--space-sm);
 }
 
 .faqCard p {
   font-size: 0.9375rem;
-  color: var(--color-deep-ink);
+  color: var(--text-secondary);
   opacity: 0.85;
   line-height: 1.6;
   margin: 0;

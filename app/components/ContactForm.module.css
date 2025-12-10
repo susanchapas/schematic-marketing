@@ -1,5 +1,8 @@
 .form {
   padding: var(--space-lg);
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
 }
 
 @media (min-width: 768px) {
@@ -32,9 +35,9 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: #fca5a5;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-md);
   margin-bottom: var(--space-md);
@@ -45,7 +48,7 @@
   display: inline-block;
   width: 18px;
   height: 18px;
-  border: 2px solid rgba(252, 249, 240, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: #ffffff;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -82,22 +85,20 @@
   align-items: center;
   justify-content: center;
   color: var(--color-blueprint);
-  box-shadow:
-    4px 4px 10px rgba(209, 204, 192, 0.35),
-    -4px -4px 10px rgba(252, 249, 240, 0.7);
-  border: 1px solid rgba(252, 249, 240, 0.5);
+  box-shadow: var(--shadow-extrude-sm);
+  border: 1px solid var(--border-subtle);
 }
 
 .successTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-deep-ink);
+  color: var(--text-primary);
   margin: 0;
 }
 
 .successText {
   font-size: 1rem;
-  color: var(--color-deep-ink);
+  color: var(--text-secondary);
   opacity: 0.85;
   max-width: 400px;
   margin: 0;

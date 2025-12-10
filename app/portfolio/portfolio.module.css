@@ -85,11 +85,11 @@
   color: var(--color-canvas);
 }
 
-.processSection .section__title {
+.processSection :global(.section__title) {
   color: var(--color-canvas);
 }
 
-.processSection .section__subtitle {
+.processSection :global(.section__subtitle) {
   color: rgba(252, 249, 240, 0.9);
 }
 

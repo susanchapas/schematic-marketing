@@ -122,7 +122,10 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className={`section ${styles.ctaSection}`} aria-labelledby="cta-heading">
+      <section
+        className={`section ${styles.ctaSection} blueprint-bg`}
+        aria-labelledby="cta-heading"
+      >
         <div className="container">
           <div className={`surface ${styles.ctaCard}`}>
             <h2 id="cta-heading" className="h2">

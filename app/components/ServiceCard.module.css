@@ -1,8 +1,8 @@
 .card {
-  background: var(--color-vellum);
+  background: var(--bg-surface);
   box-shadow: var(--shadow-extrude);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(252, 249, 240, 0.5);
+  border: 1px solid var(--border-subtle);
   padding: var(--space-lg);
   transition:
     transform var(--transition-normal),
@@ -10,11 +10,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(12px);
 }
 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-extrude-hover);
+  border-color: var(--border-highlight);
+  background: var(--bg-surface-hover);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -31,22 +34,21 @@
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-md);
-  box-shadow:
-    3px 3px 8px rgba(209, 204, 192, 0.3),
-    -3px -3px 8px rgba(252, 249, 240, 0.7);
-  border: 1px solid rgba(252, 249, 240, 0.5);
+  box-shadow: var(--shadow-extrude-sm);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .iconWrapper--blue {
-  background: linear-gradient(135deg, var(--color-cloud-blue) 0%, var(--color-drafting) 100%);
+  background: linear-gradient(135deg, rgba(27, 70, 136, 0.4) 0%, rgba(187, 205, 243, 0.2) 100%);
 }
 
 .iconWrapper--rose {
-  background: linear-gradient(135deg, var(--color-rose-clay) 0%, #f8d4d0 100%);
+  background: linear-gradient(135deg, rgba(245, 226, 224, 0.2) 0%, rgba(245, 226, 224, 0.1) 100%);
 }
 
 .icon {
-  color: var(--color-blueprint);
+  color: var(--text-accent);
   width: 32px;
   height: 32px;
   display: flex;
@@ -63,14 +65,14 @@
 .title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-deep-ink);
+  color: var(--text-primary);
   margin-bottom: var(--space-sm);
 }
 
 .description {
   font-size: 0.9375rem;
-  color: var(--color-deep-ink);
-  opacity: 0.85;
+  color: var(--text-secondary);
+  opacity: 0.9;
   line-height: 1.6;
   flex-grow: 1;
 }
