@@ -4,24 +4,26 @@
   --color-drafting: #bbcdf3;
   --color-canvas: #ffffff;
   --color-deep-ink: #102f5d;
+  --color-vellum: #f5f0e0;
+  /* Defined explicitly */
 
   /* Semantic Theme Tokens */
   --bg-page: #f5f0e0;
   --bg-blueprint: #102f5d;
-  --bg-surface: #ffffff;
-  /* White surface for beige theme */
-  --bg-surface-hover: #fdfbf7;
-  /* Slightly off-white hover */
+  --bg-surface: #f5f0e0;
+  /* Matches page bg for neumorphism */
+  --bg-surface-hover: #f5f0e0;
+  /* No color change on hover, just shadow */
 
   --text-primary: #102f5d;
   /* Deep Ink */
-  --text-secondary: #4a5568;
-  /* Dark Grey/Blue for secondary */
+  --text-secondary: #5a6b7c;
+  /* Softer blue-grey */
   --text-accent: #1b4688;
   /* Blueprint Blue */
 
   --border-subtle: rgba(187, 205, 243, 0.2);
-  --border-highlight: rgba(187, 205, 243, 0.4);
+  --border-highlight: rgba(255, 255, 255, 0.4);
 
   /* Secondary Palette (Accents) */
   --color-cloud-blue: #e0eaf5;
@@ -37,22 +39,28 @@
   --radius-md: 12px;
   --radius-sm: 8px;
 
-  /* Neumorphic Shadows - Adapted for Dark Mode */
-  --neu-light: rgba(255, 255, 255, 0.1);
-  --neu-dark: rgba(0, 0, 0, 0.2);
-  --shadow-extrude: 6px 6px 16px rgba(0, 0, 0, 0.3), -2px -2px 12px rgba(255, 255, 255, 0.05);
-  --shadow-extrude-sm: 4px 4px 10px rgba(0, 0, 0, 0.25), -2px -2px 8px rgba(255, 255, 255, 0.05);
-  --shadow-extrude-hover: 8px 8px 20px rgba(0, 0, 0, 0.4), -2px -2px 16px rgba(255, 255, 255, 0.08);
-  --shadow-inset:
-    inset 2px 2px 5px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 0.05);
+  /* Neumorphic Shadows - Light Mode (Beige) */
+  --shadow-extrude: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.8);
 
-  --shadow-button: 0 4px 12px rgba(0, 0, 0, 0.2);
-  --shadow-button-hover: 0 6px 16px rgba(0, 0, 0, 0.3);
+  --shadow-extrude-sm:
+    5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.8);
+
+  --shadow-extrude-hover:
+    12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.9);
+
+  --shadow-inset:
+    inset 6px 6px 10px rgba(163, 177, 198, 0.6), inset -6px -6px 10px rgba(255, 255, 255, 0.8);
+
+  --shadow-button: 6px 6px 12px rgba(163, 177, 198, 0.6), -6px -6px 12px rgba(255, 255, 255, 0.8);
+
+  --shadow-button-hover:
+    4px 4px 8px rgba(163, 177, 198, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.8);
+  /* Pressed effect or closer to surface */
 
   /* Grid */
-  --grid-color: rgba(187, 205, 243, 0.15);
+  --grid-color: rgba(27, 70, 136, 0.08);
+  /* Subtle blue grid on beige */
   --grid-color-blueprint: rgba(187, 205, 243, 0.15);
-  /* Light drafting blue, low opacity */
 
   /* Spacing */
   --space-xs: 0.5rem;
@@ -64,9 +72,9 @@
   --space-3xl: 6rem;
 
   /* Transitions */
-  --transition-fast: 0.12s ease;
-  --transition-normal: 0.2s ease;
-  --transition-slow: 0.3s ease;
+  --transition-fast: 0.15s ease-out;
+  --transition-normal: 0.25s ease-out;
+  --transition-slow: 0.4s ease-out;
 
   /* Container */
   --container-max: 1200px;

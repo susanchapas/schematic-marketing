@@ -2,7 +2,8 @@
   padding: var(--space-lg);
   background: var(--bg-surface);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-extrude);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 @media (min-width: 768px) {

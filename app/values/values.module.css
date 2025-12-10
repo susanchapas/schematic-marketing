@@ -245,8 +245,8 @@
   margin: 0 auto;
   background: var(--bg-surface);
   border-radius: var(--radius-xl);
-  border: 1px solid var(--border-highlight);
-  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-extrude);
 }
 
 .ctaCard h2 {

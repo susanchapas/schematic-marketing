@@ -101,9 +101,9 @@
   padding: var(--space-2xl);
   max-width: 700px;
   margin: 0 auto;
-  background: rgba(27, 70, 136, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-highlight);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-extrude);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .ctaCard h2 {
