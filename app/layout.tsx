@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Caveat } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,12 +8,6 @@ import SkipToContent from './components/SkipToContent';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
-  display: 'swap',
-});
-
-const caveat = Caveat({
-  subsets: ['latin'],
-  variable: '--font-accent',
   display: 'swap',
 });
 
@@ -82,7 +76,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${caveat.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />

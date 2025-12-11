@@ -34,7 +34,7 @@
   /* Typography */
   --font-sans:
     'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-accent: 'Caveat', 'Architects Daughter', cursive;
+  --font-accent: 'Architects Daughter', cursive;
 
   /* Border Radius */
   --radius-lg: 20px;
