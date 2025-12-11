@@ -9,6 +9,23 @@ export default function Home() {
     <main id="main" role="main">
       <Hero />
 
+      {/* Trusted By Section */}
+      <section className={styles.trustedBy} aria-labelledby="trusted-heading">
+        <div className="container">
+          <p id="trusted-heading" className={styles.trustedLabel}>
+            Trusted by industry leaders
+          </p>
+          <div className={styles.logoGrid}>
+            {/* Mock Logos - Text based for now, could be SVGs */}
+            <div className={styles.logoItem}>ACME Corp</div>
+            <div className={styles.logoItem}>Global Tech</div>
+            <div className={styles.logoItem}>Future Systems</div>
+            <div className={styles.logoItem}>BluePrint Inc</div>
+            <div className={styles.logoItem}>Starlight Media</div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="section" aria-labelledby="services-heading">
         <div className="container">
@@ -80,7 +97,7 @@ export default function Home() {
                   inclusive and usable.
                 </li>
               </ul>
-              <Link href="/values" className="btn btn--ghost">
+              <Link href="/about" className="btn btn--ghost">
                 Explore Our Values
               </Link>
             </div>

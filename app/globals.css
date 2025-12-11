@@ -116,9 +116,11 @@ h6 {
   background: var(--bg-surface);
   box-shadow: var(--shadow-extrude);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  /* Highlight border */
-  /* backdrop-filter removed for paper feel */
+  /* Hard directional border for architectural feel */
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  border-right: 1px solid rgba(163, 177, 198, 0.3);
+  border-bottom: 1px solid rgba(163, 177, 198, 0.3);
   padding: var(--space-md);
   transition:
     box-shadow var(--transition-normal),
@@ -128,8 +130,9 @@ h6 {
 .surface:hover {
   box-shadow: var(--shadow-extrude-hover);
   background: var(--bg-surface-hover);
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+  /* Subtle lift */
+  /* Borders stay consistent */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -147,9 +150,11 @@ h6 {
 
 .surface--inset {
   box-shadow: var(--shadow-inset);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--bg-page);
-  /* Match page bg for inset */
+  border-top: 1px solid rgba(163, 177, 198, 0.3);
+  border-left: 1px solid rgba(163, 177, 198, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 /* Buttons */
@@ -173,13 +178,16 @@ h6 {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translateY(1px);
   box-shadow: var(--shadow-inset);
-  /* Pressed effect */
+  border-top: 1px solid rgba(163, 177, 198, 0.3);
+  border-left: 1px solid rgba(163, 177, 198, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .btn:disabled {
@@ -190,28 +198,35 @@ h6 {
 }
 
 .btn--primary {
-  background: var(--color-drafting);
-  color: var(--color-deep-ink);
-  box-shadow: var(--shadow-button);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--color-blueprint);
+  /* Solid blueprint blue */
+  color: var(--color-canvas);
+  box-shadow:
+    3px 3px 0px rgba(16, 47, 93, 0.3),
+    /* Darker shadow for blue button */ -1px -1px 0px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn--primary:hover {
-  background: #ffffff;
-  box-shadow: var(--shadow-button-hover);
+  background: #2355a0;
+  /* Slightly lighter blue */
+  box-shadow:
+    4px 4px 0px rgba(16, 47, 93, 0.3),
+    -1px -1px 0px rgba(255, 255, 255, 0.2);
 }
 
 .btn--secondary {
   background: var(--bg-surface);
   color: var(--text-primary);
   box-shadow: var(--shadow-extrude-sm);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  /* backdrop-filter removed */
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  border-right: 1px solid rgba(163, 177, 198, 0.3);
+  border-bottom: 1px solid rgba(163, 177, 198, 0.3);
 }
 
 .btn--secondary:hover {
   background: var(--bg-surface-hover);
-  border-color: rgba(255, 255, 255, 0.6);
   box-shadow: var(--shadow-extrude);
 }
 

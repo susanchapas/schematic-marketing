@@ -127,3 +127,40 @@
     flex-direction: row;
   }
 }
+
+/* Trusted By Section */
+.trustedBy {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.trustedLabel {
+  text-align: center;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.logoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-lg);
+  align-items: center;
+  opacity: 0.7;
+}
+
+.logoItem {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--color-blueprint);
+  font-family: var(--font-sans);
+  padding: var(--space-xs) var(--space-sm);
+  /* Placeholder style for text logos */
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}

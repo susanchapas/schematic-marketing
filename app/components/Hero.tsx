@@ -16,7 +16,7 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = 'The Architecture of Influence',
+  title = 'The Marketing Agency for the Architecture of Influence',
   subtitle = 'We engineer engagement: modular marketing services blending strategy, design, and accessible tech.',
   primaryCta = { label: 'View Our Work', href: '/portfolio' },
   secondaryCta = { label: 'Get in Touch', href: '/contact' },
