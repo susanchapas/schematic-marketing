@@ -31,28 +31,44 @@
 }
 
 /* Variants */
+/* Variants */
 .button--primary {
-  background: var(--color-blueprint);
-  color: var(--color-canvas);
-  box-shadow: var(--shadow-button);
+  background: var(--bg-surface);
+  color: var(--color-blueprint);
+  box-shadow: var(--shadow-neumorphic-out);
+  border: none;
 }
 
 .button--primary:hover {
-  background: var(--color-deep-ink);
-  box-shadow: 0 8px 24px rgba(27, 70, 136, 0.25);
+  background: var(--bg-surface);
+  transform: translateY(0);
+  box-shadow: var(--shadow-neumorphic-in);
+  color: var(--color-deep-ink);
+}
+
+.button--primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-neumorphic-in);
+  border-color: transparent;
 }
 
 .button--secondary {
-  background: var(--color-vellum);
+  background: var(--bg-surface);
   color: var(--color-deep-ink);
-  box-shadow: var(--shadow-extrude);
-  border: 1px solid rgba(252, 249, 240, 0.5);
+  box-shadow: var(--shadow-neumorphic-out-sm);
+  border: none;
 }
 
 .button--secondary:hover {
-  box-shadow:
-    4px 4px 8px rgba(209, 204, 192, 0.3),
-    -4px -4px 8px rgba(252, 249, 240, 0.7);
+  background: var(--bg-surface);
+  transform: translateY(0);
+  box-shadow: var(--shadow-neumorphic-in);
+}
+
+.button--secondary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-neumorphic-in);
+  border-color: transparent;
 }
 
 .button--ghost {
@@ -63,8 +79,14 @@
 }
 
 .button--ghost:hover {
-  background: var(--color-blueprint);
-  color: var(--color-canvas);
+  background: var(--bg-surface);
+  color: var(--color-deep-ink);
+  box-shadow: var(--shadow-neumorphic-in);
+  border-color: transparent;
+}
+
+.button--ghost:active {
+  box-shadow: var(--shadow-neumorphic-in);
 }
 
 /* Sizes */

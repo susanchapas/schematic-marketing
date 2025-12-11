@@ -121,7 +121,14 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className={`surface ${styles.successMessage}`} role="status">
+      <div
+        className={`surface ${styles.successMessage}`}
+        role="status"
+        ref={node => {
+          if (node) node.focus();
+        }}
+        tabIndex={-1}
+      >
         <div className={styles.successIcon} aria-hidden="true">
           <svg
             width="48"

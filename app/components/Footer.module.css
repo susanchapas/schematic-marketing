@@ -42,7 +42,7 @@
 .tagline {
   font-family: var(--font-accent);
   font-size: 1.25rem;
-  color: var(--color-drafting);
+  color: #ffffff;
 }
 
 .description {

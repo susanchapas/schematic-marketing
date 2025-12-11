@@ -81,7 +81,7 @@
   justify-content: center;
   min-height: 300px;
   background: rgba(27, 70, 136, 0.2);
-  border: 1px solid var(--border-subtle);
+  border: none;
 }
 
 .blueprintPattern {
@@ -103,7 +103,7 @@
   margin: 0 auto;
   background: var(--bg-surface);
   box-shadow: var(--shadow-extrude);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: none;
 }
 
 .ctaCard h2 {
@@ -131,7 +131,7 @@
 /* Trusted By Section */
 .trustedBy {
   padding: var(--space-lg) 0;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: none;
   background: rgba(255, 255, 255, 0.3);
 }
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './Header.module.css';
 
 const navLinks = [
@@ -13,6 +14,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -76,13 +78,21 @@ export default function Header() {
           aria-label="Primary navigation"
         >
           <ul className={styles.navList}>
-            {navLinks.map(link => (
-              <li key={link.href}>
-                <Link href={link.href} className={styles.navLink} onClick={closeMenu}>
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map(link => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={`${styles.navLink} ${isActive ? styles.active : ''}`}
+                    onClick={closeMenu}
+                    aria-current={isActive ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <Link href="/contact" className="btn btn--primary" onClick={closeMenu}>
             Get Started

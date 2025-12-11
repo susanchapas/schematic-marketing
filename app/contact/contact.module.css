@@ -61,7 +61,8 @@
   padding: var(--space-lg);
   background: var(--bg-surface);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-neumorphic-out);
+  border: none;
 }
 
 .contactInfo h3,
@@ -152,14 +153,23 @@
   font-size: 0.875rem;
   transition:
     background var(--transition-fast),
-    transform var(--transition-fast);
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
   min-height: 44px;
-  border: 1px solid var(--border-subtle);
+  border: none;
+  box-shadow: var(--shadow-neumorphic-out-sm);
 }
 
 .socialLink:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  background: var(--bg-surface);
+  transform: translateY(0);
+  box-shadow: var(--shadow-neumorphic-in);
+}
+
+.socialLink:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-neumorphic-in);
+  border-color: transparent;
 }
 
 .socialLink svg {
@@ -188,7 +198,8 @@
   padding: var(--space-lg);
   background: var(--bg-surface);
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-neumorphic-out);
+  border: none;
 }
 
 .faqCard h3 {

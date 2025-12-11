@@ -48,6 +48,7 @@
 .heroTitle {
   margin-bottom: var(--space-md);
   animation: fadeInUp 0.6s ease forwards;
+  text-shadow: 0 2px 4px rgba(16, 47, 93, 0.1);
 }
 
 .heroSubtitle {
