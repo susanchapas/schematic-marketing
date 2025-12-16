@@ -82,7 +82,7 @@ export default function Sidebar() {
       </header>
 
       {/* Desktop Sidebar */}
-      <aside className={styles.sidebar} aria-label="Primary navigation">
+      <aside className={styles.sidebar}>
         <div className={styles.sidebarInner}>
           <Link href="/" className={styles.logo} aria-label="Schematic Marketing Home">
             <svg
@@ -99,7 +99,7 @@ export default function Sidebar() {
             <span className={styles.logoText}>Schematic</span>
           </Link>
 
-          <nav className={styles.nav}>
+          <nav className={styles.nav} aria-label="Primary navigation">
             <ul className={styles.navList}>
               {navLinks.map(link => {
                 const isActive = pathname === link.href;
