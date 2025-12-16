@@ -1,162 +1,268 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
+import { motion, useReducedMotion } from 'framer-motion';
+import AnimatedSection from '../components/AnimatedSection';
+import MorphCard from '../components/MorphCard';
+import FloatingAccent from '../components/FloatingAccent';
 import styles from './about.module.css';
 
-export const metadata: Metadata = {
-  title: 'About Us',
-  description:
-    'Learn about Schematic Marketing — a systems-first creative studio that deconstructs complex market problems and rebuilds them into functional, artistic engines of growth.',
-};
+const coreValues = [
+  {
+    title: 'Structural Integrity',
+    tagline: 'Plan before you act',
+    description:
+      'Every element has purpose. We research, strategize, and architect solutions before executing. This foundation ensures that campaigns, designs, and digital products stand the test of time and market changes.',
+    features: [
+      'Data-informed decision making',
+      'Strategic planning before execution',
+      'Measurable goals and KPIs',
+      'Long-term sustainability',
+    ],
+  },
+  {
+    title: 'Modular Flexibility',
+    tagline: 'Build to scale and adapt',
+    description:
+      'Components should compose and recompose without friction. We design systems, not just solutions—allowing your brand to grow, pivot, and evolve while maintaining consistency and efficiency.',
+    features: [
+      'Scalable design systems',
+      'Reusable component libraries',
+      'Flexible campaign frameworks',
+      'Future-proof architecture',
+    ],
+  },
+  {
+    title: 'Human Fluidity',
+    tagline: 'Data and empathy coexist',
+    description:
+      'Analytics guide us, but empathy drives us. We never lose sight of the humans behind the metrics—crafting experiences that resonate emotionally while delivering measurable results.',
+    features: [
+      'User-centered design',
+      'Authentic brand storytelling',
+      'Community-first engagement',
+      'Emotional intelligence in messaging',
+    ],
+  },
+  {
+    title: 'Accessible Innovation',
+    tagline: 'High-tech meets high-touch',
+    description:
+      'We embrace cutting-edge technology while ensuring everything we create remains readable, usable, and inclusive. Innovation should open doors, not close them.',
+    features: [
+      'WCAG compliance as standard',
+      'Inclusive design practices',
+      'Performance optimization',
+      'Technology that serves users',
+    ],
+  },
+];
 
-const teamMembers = [
+const missionPillars = [
   {
-    name: 'Sarah Chen',
-    role: 'Founder & Creative Director',
-    bio: 'With 15 years in brand strategy, Sarah brings architectural thinking to every creative challenge.',
+    title: 'Structural Integrity',
+    description: 'Plan before you act. Every element has purpose, every decision is intentional.',
   },
   {
-    name: 'Marcus Williams',
-    role: 'Head of Digital',
-    bio: 'Full-stack developer turned strategist, Marcus bridges the gap between technical excellence and user experience.',
+    title: 'Modular Flexibility',
+    description: 'Components that compose and recompose without friction—built to scale with you.',
   },
   {
-    name: 'Elena Rodriguez',
-    role: 'Design Lead',
-    bio: "From Fortune 500 brands to startups, Elena's design philosophy centers on clarity and emotional resonance.",
+    title: 'Human Fluidity',
+    description: 'Data and empathy coexist. We blend analytics with authentic human connection.',
   },
   {
-    name: 'James Okonkwo',
-    role: 'Marketing Strategist',
-    bio: 'Data-driven with a creative edge, James turns market insights into actionable growth strategies.',
+    title: 'Accessible Innovation',
+    description: 'High-tech execution that stays readable, usable, and inclusive for everyone.',
   },
 ];
 
 export default function AboutPage() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <main id="main" role="main">
-      {/* Hero Section */}
-      <section className={`section ${styles.hero}`}>
+    <main id="main" role="main" className={styles.page}>
+      {/* Hero */}
+      <section className={styles.hero}>
+        <FloatingAccent size="lg" position="top-right" color="peach" delay={0.2} />
         <div className="container">
-          <div className={styles.heroContent}>
-            <h1 className="h1">We Build the Blueprint for Your Brand&apos;s Growth</h1>
+          <AnimatedSection>
+            <h1 className="h1">Strategy With Precision</h1>
+            <div className={styles.accentBar} aria-hidden="true" />
+          </AnimatedSection>
+          <AnimatedSection delay={0.2}>
             <p className="text-lead">
-              Schematic Marketing is a systems-first creative studio. We deconstruct complex market
-              problems and rebuild them into functional, artistic engines of growth.
+              We engineer marketing systems that are built on clarity, research, and structural
+              thinking.
             </p>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="section" aria-labelledby="story-heading">
+      {/* Founder Section */}
+      <section className={styles.founderSection} aria-labelledby="founder-heading">
         <div className="container">
-          <div className={styles.storyGrid}>
-            <div className={styles.storyContent}>
-              <h2 id="story-heading" className="h2">
-                Our Story
-              </h2>
-              <p>
-                Founded in 2018, Schematic Marketing emerged from a simple observation: too many
-                agencies prioritize flash over function, creativity over strategy, or vice versa.
-              </p>
-              <p>
-                We believed there was a better way—an approach that treats marketing like
-                architecture. Every element has purpose. Every component interlocks. Every campaign
-                is built on a foundation of research, strategy, and intentional design.
-              </p>
-              <p>
-                Today, we serve clients across industries, from ambitious startups to established
-                enterprises. But our mission remains the same: to engineer engagement that lasts.
-              </p>
-            </div>
-            <div className={`surface ${styles.storyVisual}`}>
-              <p className={`text-accent ${styles.quote}`}>
-                &quot;What happens when precision and softness share a single surface? Interaction
-                becomes legible and pleasant.&quot;
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className={`section ${styles.missionSection}`} aria-labelledby="mission-heading">
-        <div className="container">
-          <div className={styles.missionContent}>
-            <h2 id="mission-heading" className="h2">
-              Our Mission
-            </h2>
-            <p className={styles.missionStatement}>
-              To deconstruct complex market problems and rebuild them into functional, artistic
-              engines of growth.
-            </p>
-            <div className={styles.pillars}>
-              <article className={`surface ${styles.pillar}`}>
-                <h3>Structural Integrity</h3>
-                <p>
-                  Plan before you act. Every element has purpose, every decision is intentional.
+          <div className={styles.founderGrid}>
+            <AnimatedSection className={styles.founderImage} direction="left">
+              <div className={styles.imagePlaceholder}>
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect
+                    x="20"
+                    y="20"
+                    width="160"
+                    height="160"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                  />
+                  <circle cx="100" cy="80" r="35" stroke="currentColor" strokeWidth="1" />
+                  <path
+                    d="M50 180 Q100 130 150 180"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+            </AnimatedSection>
+            <div className={styles.founderContent}>
+              <AnimatedSection>
+                <h2 id="founder-heading" className="h2">
+                  Our Approach
+                </h2>
+              </AnimatedSection>
+              <AnimatedSection delay={0.1}>
+                <p className={styles.founderText}>
+                  At Schematic Marketing, we believe great marketing isn&apos;t about following
+                  formulas—it&apos;s about engineering solutions that fit your unique challenges. We
+                  combine strategic thinking with technical precision to create systems that scale.
                 </p>
-              </article>
-              <article className={`surface ${styles.pillar}`}>
-                <h3>Modular Flexibility</h3>
-                <p>
-                  Components that compose and recompose without friction—built to scale with you.
+              </AnimatedSection>
+              <AnimatedSection delay={0.2}>
+                <p className={styles.founderText}>
+                  Every engagement starts with deep research and ends with measurable outcomes. We
+                  don&apos;t just execute campaigns; we architect the infrastructure for sustainable
+                  growth.
                 </p>
-              </article>
-              <article className={`surface ${styles.pillar}`}>
-                <h3>Human Fluidity</h3>
-                <p>Data and empathy coexist. We blend analytics with authentic human connection.</p>
-              </article>
-              <article className={`surface ${styles.pillar}`}>
-                <h3>Accessible Innovation</h3>
-                <p>High-tech execution that stays readable, usable, and inclusive for everyone.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="section" aria-labelledby="team-heading">
-        <div className="container">
-          <header className="section__header">
-            <h2 id="team-heading" className="h2 section__title">
-              Meet the Team
-            </h2>
-            <p className="section__subtitle">
-              Architects, artists, and analysts united by a passion for purposeful work.
-            </p>
-          </header>
-          <div className={styles.teamGrid}>
-            {teamMembers.map(member => (
-              <article key={member.name} className={`surface ${styles.teamCard}`}>
-                <div className={styles.teamAvatar} aria-hidden="true">
-                  {member.name
-                    .split(' ')
-                    .map(n => n[0])
-                    .join('')}
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <div className={styles.founderQuote}>
+                  <blockquote>
+                    &ldquo;Marketing should be engineered, not improvised.&rdquo;
+                  </blockquote>
+                  <cite>— Founder, Schematic Marketing</cite>
                 </div>
-                <h3 className={styles.teamName}>{member.name}</h3>
-                <p className={styles.teamRole}>{member.role}</p>
-                <p className={styles.teamBio}>{member.bio}</p>
-              </article>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Intro Section */}
+      <section className={styles.valuesIntro} aria-labelledby="values-intro-heading">
+        <div className="container">
+          <FloatingAccent size="md" position="bottom-left" color="warm" delay={0.3} />
+          <AnimatedSection className={styles.valuesIntroContent}>
+            <h2 id="values-intro-heading" className="h2">
+              Our Values Define Our Work
+            </h2>
+            <div className={styles.accentBarCenter} aria-hidden="true" />
+            <p className="text-lead">
+              These aren&apos;t just words on a wall. They&apos;re the principles that shape every
+              decision, every design, and every relationship we build.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Core Values Section */}
+      <section
+        className={`${styles.coreValuesSection} section--framed`}
+        aria-labelledby="core-values-heading"
+      >
+        <div className="container">
+          <AnimatedSection>
+            <h2 id="core-values-heading" className="h2 text-center section__title">
+              Core Values
+            </h2>
+          </AnimatedSection>
+          <div className={styles.coreValuesGrid}>
+            {coreValues.map((value, index) => (
+              <MorphCard
+                key={value.title}
+                className={styles.coreValueCard}
+                delay={index * 0.1}
+                as="article"
+              >
+                <div className={styles.coreValueHeader}>
+                  <h3 className={styles.coreValueTitle}>{value.title}</h3>
+                  <span className={styles.coreValueTagline}>{value.tagline}</span>
+                </div>
+                <p className={styles.coreValueDescription}>{value.description}</p>
+                <ul className={styles.coreValueFeatures} aria-label={`${value.title} features`}>
+                  {value.features.map(feature => (
+                    <li key={feature} className={styles.coreValueFeature}>
+                      <span className={styles.featureBullet} aria-hidden="true">
+                        ●
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </MorphCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className={`section ${styles.ctaSection}`} aria-labelledby="cta-heading">
+      {/* Mission Section */}
+      <section
+        className={`${styles.missionSection} blueprint-bg`}
+        aria-labelledby="mission-heading"
+      >
         <div className="container">
-          <div className={`surface ${styles.ctaCard}`}>
-            <h2 id="cta-heading" className="h2">
-              Ready to Work Together?
+          <FloatingAccent size="lg" position="center" color="navy" delay={0.2} />
+          <AnimatedSection className={styles.missionContent}>
+            <h2 id="mission-heading" className="h2">
+              Our Mission
             </h2>
-            <p>Let&apos;s discuss how we can architect your brand&apos;s next chapter.</p>
-            <Link href="/contact" className="btn btn--primary">
-              Start the Conversation
-            </Link>
+            <div className={styles.accentBarCenterLight} aria-hidden="true" />
+            <p className={styles.missionStatement}>
+              To deconstruct complex market problems and rebuild them into functional, artistic
+              engines of growth.
+            </p>
+          </AnimatedSection>
+          <div className={styles.missionPillarsGrid}>
+            {missionPillars.map((pillar, index) => (
+              <AnimatedSection key={pillar.title} delay={index * 0.1}>
+                <article className={styles.missionPillar}>
+                  <h3 className={styles.missionPillarTitle}>{pillar.title}</h3>
+                  <p className={styles.missionPillarDescription}>{pillar.description}</p>
+                </article>
+              </AnimatedSection>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className={styles.ctaSection} aria-labelledby="about-cta">
+        <div className="container">
+          <AnimatedSection className={styles.ctaContent}>
+            <h2 id="about-cta" className="h2">
+              Let&apos;s Build Together
+            </h2>
+            <p className="text-lead">
+              Ready to engineer your marketing strategy? We&apos;re here to help.
+            </p>
+            <motion.div
+              whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
+              whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+            >
+              <Link href="/contact" className="btn btn--primary btn--glow">
+                Start the Schematic
+              </Link>
+            </motion.div>
+          </AnimatedSection>
         </div>
       </section>
     </main>

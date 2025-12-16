@@ -1,32 +1,40 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
-import Header from './components/Header';
+import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import SkipToContent from './components/SkipToContent';
 
-const inter = Inter({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-sans',
+  display: 'swap',
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-mono',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://schematicmarketing.com'),
   title: {
-    default: 'Schematic Marketing — The Architecture of Influence',
+    default: 'Schematic Marketing — Strategy With Architectural Precision',
     template: '%s | Schematic Marketing',
   },
   description:
-    'We engineer engagement: modular marketing services blending strategy, design, and accessible tech. Social management, web development, graphic design, event planning, and SEO.',
+    'We engineer marketing systems built on clarity, research, and structural thinking. Strategy, design, and technology with precision.',
   keywords: [
     'marketing agency',
+    'strategic marketing',
     'web development',
-    'social media management',
-    'graphic design',
-    'SEO',
-    'branding',
+    'brand strategy',
     'digital marketing',
+    'SEO',
+    'design systems',
   ],
   authors: [{ name: 'Schematic Marketing' }],
   creator: 'Schematic Marketing',
@@ -36,23 +44,23 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://schematicmarketing.com',
     siteName: 'Schematic Marketing',
-    title: 'Schematic Marketing — The Architecture of Influence',
+    title: 'Schematic Marketing — Strategy With Architectural Precision',
     description:
-      'We engineer engagement: modular marketing services blending strategy, design, and accessible tech.',
+      'We engineer marketing systems built on clarity, research, and structural thinking.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Schematic Marketing - The Architecture of Influence',
+        alt: 'Schematic Marketing - Strategy With Architectural Precision',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Schematic Marketing — The Architecture of Influence',
+    title: 'Schematic Marketing — Strategy With Architectural Precision',
     description:
-      'We engineer engagement: modular marketing services blending strategy, design, and accessible tech.',
+      'We engineer marketing systems built on clarity, research, and structural thinking.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -66,6 +74,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  manifest: '/manifest.json',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 };
 
 export const viewport: Viewport = {
@@ -76,16 +90,20 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
+    <html lang="en" className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <SkipToContent />
-        <Header />
-        {children}
-        <Footer />
+        <div className="app-layout">
+          <Sidebar />
+          <div className="main-wrapper">
+            {children}
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );

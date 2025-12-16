@@ -1,75 +1,64 @@
-import PortfolioCard, { PortfolioProject } from './PortfolioCard';
+'use client';
+
+import PortfolioCard from './PortfolioCard';
 import styles from './PortfolioGrid.module.css';
 
-export const portfolioProjects: PortfolioProject[] = [
+const projects = [
   {
-    id: 'stellar-rebrand',
-    title: 'Stellar Tech Rebrand',
-    description:
-      'Complete brand identity refresh including logo, color system, and comprehensive guidelines for a growing tech startup.',
-    category: 'Branding',
-    imageUrl: '/portfolio/stellar-tech.jpg',
-    tags: ['Brand Strategy', 'Logo Design', 'Guidelines'],
+    title: 'Enterprise Rebrand',
+    category: 'Brand Strategy',
+    description: 'Complete identity overhaul for a Fortune 500 technology company.',
+    metrics: '+180% brand recognition',
   },
   {
-    id: 'artisan-ecommerce',
-    title: 'Artisan Market E-commerce',
-    description:
-      'Custom e-commerce platform built for local artisans, featuring accessible design and seamless checkout experience.',
+    title: 'E-Commerce Platform',
     category: 'Web Development',
-    imageUrl: '/portfolio/artisan-market.jpg',
-    tags: ['Next.js', 'E-commerce', 'Accessibility'],
+    description: 'High-performance platform built for scale and conversion.',
+    metrics: '+340% conversion rate',
   },
   {
-    id: 'wellness-campaign',
-    title: 'Wellness Week Campaign',
-    description:
-      'Multi-channel social media campaign that increased engagement by 340% and drove significant event attendance.',
-    category: 'Social Media',
-    imageUrl: '/portfolio/wellness-week.jpg',
-    tags: ['Content Strategy', 'Analytics', 'Community'],
+    title: 'Nonprofit Awareness',
+    category: 'Campaign',
+    description: 'Multi-channel campaign that reached millions and drove record donations.',
+    metrics: '2M+ reach',
   },
   {
-    id: 'summit-event',
-    title: 'Innovation Summit 2024',
-    description:
-      'End-to-end planning and execution of a 500+ attendee tech conference with virtual streaming capabilities.',
-    category: 'Event Planning',
-    imageUrl: '/portfolio/innovation-summit.jpg',
-    tags: ['Logistics', 'Hybrid Events', 'Branding'],
+    title: 'SaaS Launch',
+    category: 'Go-to-Market',
+    description: 'Full-funnel strategy from positioning to paid acquisition.',
+    metrics: '$2M ARR in 6 months',
   },
   {
-    id: 'organic-seo',
-    title: 'Organic Growth Strategy',
-    description:
-      'SEO overhaul that achieved first-page rankings for 50+ competitive keywords within 6 months.',
-    category: 'SEO',
-    imageUrl: '/portfolio/organic-growth.jpg',
-    tags: ['Technical SEO', 'Content', 'Analytics'],
+    title: 'Healthcare Portal',
+    category: 'Digital Experience',
+    description: 'Patient-centered platform with accessibility at its core.',
+    metrics: '98% satisfaction score',
   },
   {
-    id: 'foundation-identity',
-    title: 'Foundation Identity System',
-    description:
-      'Cohesive visual identity for a nonprofit including print collateral, digital assets, and brand guidelines.',
-    category: 'Graphic Design',
-    imageUrl: '/portfolio/foundation-identity.jpg',
-    tags: ['Print Design', 'Digital', 'Nonprofit'],
+    title: 'Financial Services',
+    category: 'Content Strategy',
+    description: 'Thought leadership program that established market authority.',
+    metrics: '+450% organic traffic',
   },
 ];
 
 interface PortfolioGridProps {
   limit?: number;
-  showAll?: boolean;
 }
 
-export default function PortfolioGrid({ limit, showAll = false }: PortfolioGridProps) {
-  const projects = limit ? portfolioProjects.slice(0, limit) : portfolioProjects;
+export default function PortfolioGrid({ limit }: PortfolioGridProps) {
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
     <div className={styles.grid}>
-      {projects.map(project => (
-        <PortfolioCard key={project.id} project={project} />
+      {displayedProjects.map(project => (
+        <PortfolioCard
+          key={project.title}
+          title={project.title}
+          category={project.category}
+          description={project.description}
+          metrics={project.metrics}
+        />
       ))}
     </div>
   );

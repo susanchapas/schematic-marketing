@@ -1,166 +1,227 @@
+'use client';
+
 import Link from 'next/link';
+import { motion, useReducedMotion } from 'framer-motion';
 import Hero from './components/Hero';
+import IndustryTicker from './components/IndustryTicker';
 import ServicesGrid from './components/ServicesGrid';
-import PortfolioGrid from './components/PortfolioGrid';
+import MorphCard from './components/MorphCard';
+import AnimatedSection from './components/AnimatedSection';
+import SlideReveal from './components/SlideReveal';
+import AnimatedCounter from './components/AnimatedCounter';
+import FloatingAccent from './components/FloatingAccent';
 import styles from './page.module.css';
 
+const processSteps = [
+  {
+    number: '01',
+    title: 'Initial Blueprint',
+    description: 'Deep-dive discovery to understand your business, market, and objectives.',
+  },
+  {
+    number: '02',
+    title: 'Research Schematic',
+    description: 'Data-driven analysis that reveals opportunities and informs strategy.',
+  },
+  {
+    number: '03',
+    title: 'Structural Strategy',
+    description: 'Comprehensive plan with clear milestones, metrics, and execution roadmap.',
+  },
+];
+
+const stats = [
+  { value: 150, suffix: '+', label: 'Projects Delivered' },
+  { value: 340, suffix: '%', label: 'Avg. Growth Rate' },
+  { value: 12, suffix: '', label: 'Industry Verticals' },
+  { value: 98, suffix: '%', label: 'Client Retention' },
+];
+
+const whySchematicPillars = [
+  {
+    icon: '◇',
+    title: 'Strategic Foundation',
+    description: 'We plan before we act, ensuring every element has purpose.',
+  },
+  {
+    icon: '⧉',
+    title: 'Modular Approach',
+    description: 'Components designed to scale and adapt as your business grows.',
+  },
+  {
+    icon: '◎',
+    title: 'Human-Centered',
+    description: 'Data-driven decisions guided by empathy and authentic connection.',
+  },
+  {
+    icon: '⬡',
+    title: 'Accessible Innovation',
+    description: 'Cutting-edge solutions that remain inclusive and usable.',
+  },
+];
+
 export default function Home() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <main id="main" role="main">
       <Hero />
 
-      {/* Trusted By Section */}
-      <section className={styles.trustedBy} aria-labelledby="trusted-heading">
+      <IndustryTicker />
+
+      {/* Stats Section - NEW */}
+      <section className={`${styles.statsSection} section--peach`} aria-labelledby="stats-heading">
         <div className="container">
-          <p id="trusted-heading" className={styles.trustedLabel}>
-            Trusted by industry leaders
-          </p>
-          <div className={styles.logoGrid}>
-            {/* Mock Logos - Text based for now, could be SVGs */}
-            <div className={styles.logoItem}>ACME Corp</div>
-            <div className={styles.logoItem}>Global Tech</div>
-            <div className={styles.logoItem}>Future Systems</div>
-            <div className={styles.logoItem}>BluePrint Inc</div>
-            <div className={styles.logoItem}>Starlight Media</div>
+          <h2 id="stats-heading" className="sr-only">
+            Our Impact in Numbers
+          </h2>
+          <div className={styles.statsGrid}>
+            {stats.map((stat, index) => (
+              <AnimatedCounter
+                key={stat.label}
+                value={stat.value}
+                suffix={stat.suffix}
+                label={stat.label}
+                delay={index * 0.15}
+              />
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Why Schematic Section */}
+      <section className={`${styles.whySection}`} aria-labelledby="why-heading">
+        <div className={`container ${styles.whySectionInner}`}>
+          <FloatingAccent size="lg" position="top-right" color="warm" delay={0.2} />
+          <FloatingAccent size="md" position="bottom-left" color="peach" delay={0.4} />
+
+          <AnimatedSection className={styles.whyHeader}>
+            <h2 id="why-heading" className={`h2 ${styles.whyTitle}`}>
+              The Schematic Process
+            </h2>
+            <div className={styles.accentBar} aria-hidden="true" />
+          </AnimatedSection>
+
+          <div className={styles.whyGrid}>
+            {processSteps.map((step, index) => (
+              <MorphCard
+                key={step.number}
+                className={styles.processCard}
+                delay={index * 0.12}
+                as="article"
+              >
+                <div className={styles.stepNumberWrapper}>
+                  <span className={styles.stepNumber}>{step.number}</span>
+                </div>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepDescription}>{step.description}</p>
+              </MorphCard>
+            ))}
+          </div>
+
+          <AnimatedSection delay={0.4} className={styles.whyCta}>
+            <Link href="/about" className="btn btn--accent">
+              See Our Full Methodology
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="section" aria-labelledby="services-heading">
+      <section
+        className={`section ${styles.servicesSection} section--peach`}
+        aria-labelledby="services-heading"
+      >
         <div className="container">
-          <header className="section__header">
-            <h2 id="services-heading" className="h2 section__title">
-              Our Services
-            </h2>
-            <p className="section__subtitle text-lead">
-              Modular solutions designed to build, grow, and sustain your brand&apos;s presence.
-            </p>
-          </header>
+          <SlideReveal direction="left">
+            <header className="section__header">
+              <h2 id="services-heading" className="h2 section__title">
+                Our Services
+              </h2>
+              <p className="section__subtitle text-lead">
+                Modular solutions engineered to build, scale, and sustain your brand.
+              </p>
+            </header>
+          </SlideReveal>
           <ServicesGrid />
-          <div className={styles.sectionCta}>
-            <Link href="/contact" className="btn btn--primary">
-              Start Your Project
+          <AnimatedSection delay={0.3} className={styles.sectionCta}>
+            <Link href="/services" className="btn btn--primary">
+              Explore All Services
             </Link>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Featured Work Section */}
-      <section className={`section ${styles.workSection}`} aria-labelledby="work-heading">
+      {/* Why Schematic Section */}
+      <section className={`${styles.whySchematicSection}`} aria-labelledby="why-schematic-heading">
         <div className="container">
-          <header className="section__header">
-            <h2 id="work-heading" className="h2 section__title">
-              Featured Work
-            </h2>
-            <p className="section__subtitle text-lead">
-              A curated selection of projects that showcase our strategic approach and creative
-              execution.
-            </p>
-          </header>
-          <PortfolioGrid limit={3} />
-          <div className={styles.sectionCta}>
-            <Link href="/portfolio" className="btn btn--secondary">
-              View All Projects
-            </Link>
-          </div>
-        </div>
-      </section>
+          <FloatingAccent size="md" position="bottom-right" color="peach" delay={0.3} />
+          <FloatingAccent size="sm" position="top-left" color="warm" delay={0.5} />
 
-      {/* Why Choose Us Section */}
-      <section className="section" aria-labelledby="why-heading">
-        <div className="container">
-          <div className={styles.whyGrid}>
-            <div className={styles.whyContent}>
-              <h2 id="why-heading" className="h2">
+          <SlideReveal direction="right">
+            <header className="section__header">
+              <h2 id="why-schematic-heading" className="h2 section__title">
                 Why Schematic?
               </h2>
-              <p className="text-lead">
+              <p className="section__subtitle text-lead">
                 We don&apos;t just execute—we engineer. Every campaign, every design, every line of
                 code is built with intention and measured precision.
               </p>
-              <ul className={styles.whyList}>
-                <li>
-                  <strong>Strategic Foundation</strong> — We plan before we act, ensuring every
-                  element has purpose.
-                </li>
-                <li>
-                  <strong>Modular Approach</strong> — Components designed to scale and adapt as your
-                  business grows.
-                </li>
-                <li>
-                  <strong>Human-Centered</strong> — Data-driven decisions guided by empathy and
-                  authentic connection.
-                </li>
-                <li>
-                  <strong>Accessible Innovation</strong> — Cutting-edge solutions that remain
-                  inclusive and usable.
-                </li>
-              </ul>
-              <Link href="/about" className="btn btn--ghost">
-                Explore Our Values
-              </Link>
-            </div>
-            <div className={`surface ${styles.whyVisual}`} aria-hidden="true">
-              <div className={styles.blueprintPattern}>
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect
-                    x="20"
-                    y="20"
-                    width="160"
-                    height="160"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                  <rect
-                    x="40"
-                    y="40"
-                    width="120"
-                    height="120"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                  <rect
-                    x="60"
-                    y="60"
-                    width="80"
-                    height="80"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                  <circle cx="100" cy="100" r="30" stroke="currentColor" strokeWidth="1" />
-                  <line x1="0" y1="100" x2="200" y2="100" stroke="currentColor" strokeWidth="0.5" />
-                  <line x1="100" y1="0" x2="100" y2="200" stroke="currentColor" strokeWidth="0.5" />
-                </svg>
-              </div>
-            </div>
+            </header>
+          </SlideReveal>
+
+          <div className={styles.whySchematicGrid}>
+            {whySchematicPillars.map((pillar, index) => (
+              <MorphCard
+                key={pillar.title}
+                className={styles.whySchematicCard}
+                delay={index * 0.1}
+                as="article"
+              >
+                <div className={styles.whySchematicCardContent}>
+                  <span className={styles.pillarIcon} aria-hidden="true">
+                    {pillar.icon}
+                  </span>
+                  <h3 className={styles.pillarTitle}>{pillar.title}</h3>
+                  <p className={styles.pillarDescription}>{pillar.description}</p>
+                </div>
+              </MorphCard>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section
-        className={`section ${styles.ctaSection} blueprint-bg`}
-        aria-labelledby="cta-heading"
-      >
+      {/* Final CTA Section */}
+      <section className={`${styles.ctaSection} blueprint-bg`} aria-labelledby="cta-heading">
         <div className="container">
-          <div className={`surface ${styles.ctaCard}`}>
+          <FloatingAccent size="lg" position="center" color="navy" delay={0.2} />
+
+          <AnimatedSection className={styles.ctaContent}>
             <h2 id="cta-heading" className="h2">
-              Ready to Build Something Great?
+              Ready to <span className="highlight">Engineer</span> Your Solution?
             </h2>
             <p className="text-lead">
-              Let&apos;s architect your next campaign together. From strategy to execution,
-              we&apos;ll engineer growth that lasts.
+              Let&apos;s architect your next campaign together. Strategy, precision, results.
             </p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className="btn btn--primary">
-                Start a Project
-              </Link>
-              <Link href="/about" className="btn btn--secondary">
-                Learn About Us
-              </Link>
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -3 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+              >
+                <Link href="/contact" className="btn btn--primary">
+                  Start the Schematic
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={shouldReduceMotion ? {} : { scale: 1.05, y: -3 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}
+              >
+                <Link href="/about" className="btn btn--secondary">
+                  Learn About Us
+                </Link>
+              </motion.div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
     </main>

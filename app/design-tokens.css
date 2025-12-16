@@ -1,107 +1,150 @@
 :root {
-  /* Primary Palette */
-  --color-blueprint: #1b4688;
-  --color-drafting: #a0b0c5;
-  /* Darker steel blue for contrast on cloud blue */
-  --color-canvas: #ffffff;
-  --color-deep-ink: #102f5d;
-  --color-vellum: #e0eaf5;
-  /* Cloud Blue */
-  /* Defined explicitly */
+  /* ===== BRAND COLORS ===== */
+  --navy-primary: #1b4688;
+  --navy-dark: #102f5d;
+  --blue-light: #bbcdf3;
+  --offwhite: #e0eaf5;
+  --warm-neutral: #f5f0e0;
+  --peach: #f5e2e0;
 
-  /* Semantic Theme Tokens */
-  --bg-page: #e0eaf5;
-  --bg-blueprint: #102f5d;
-  --bg-surface: #e0eaf5;
-  /* Matches page bg for neumorphism */
-  --bg-surface-hover: #e0eaf5;
-  /* No color change on hover, just shadow */
+  /* Semantic Color Tokens */
+  --bg-page: var(--offwhite);
+  --bg-sidebar: var(--navy-dark);
+  --bg-section-alt: var(--warm-neutral);
+  --bg-cta: var(--navy-dark);
 
-  --text-primary: #102f5d;
-  /* Deep Ink */
-  --text-secondary: #5a6b7c;
-  /* Softer blue-grey */
-  --text-accent: #1b4688;
-  /* Blueprint Blue */
+  --text-primary: var(--navy-dark);
+  --text-secondary: #3d5a80;
+  --text-on-dark: var(--offwhite);
+  --text-accent: var(--navy-primary);
+  --text-mono: var(--navy-primary);
 
-  --border-subtle: rgba(160, 176, 197, 0.3);
-  --border-highlight: rgba(255, 255, 255, 0.6);
+  --border-stroke: var(--navy-primary);
+  --border-stroke-light: rgba(27, 70, 136, 0.2);
+  --border-hover: var(--blue-light);
 
-  /* Secondary Palette (Accents) */
-  --color-cloud-blue: #e0eaf5;
-  --color-rose-clay: #f5e2e0;
+  /* ===== TYPOGRAPHY ===== */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
 
-  /* Typography */
-  --font-sans:
-    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-accent: 'Architects Daughter', cursive;
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-extrabold: 700;
+  --weight-black: 900;
 
-  /* Border Radius */
-  --radius-lg: 20px;
-  /* Architectural/Precision */
-  --radius-md: 12px;
-  --radius-sm: 6px;
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
 
-  /* Neumorphic Shadows - Soft/Natural Mode */
-  /* Light source top-left, dark shadow bottom-right */
-  --shadow-neumorphic-out:
-    9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
-
-  --shadow-neumorphic-out-sm:
-    5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
-
-  --shadow-neumorphic-out-hover:
-    12px 12px 20px rgba(163, 177, 198, 0.7), -12px -12px 20px rgba(255, 255, 255, 0.6);
-
-  /* Inset / Pressed State */
-  /* Dark shadow top-left, light shadow bottom-right */
-  --shadow-neumorphic-in:
-    inset 6px 6px 10px rgba(163, 177, 198, 0.6), inset -6px -6px 10px rgba(255, 255, 255, 0.5);
-
-  /* Legacy mappings to ensure backward compatibility during migration */
-  --shadow-extrude: var(--shadow-neumorphic-out);
-  --shadow-extrude-sm: var(--shadow-neumorphic-out-sm);
-  --shadow-extrude-hover: var(--shadow-neumorphic-out-hover);
-  --shadow-inset: var(--shadow-neumorphic-in);
-  --shadow-button: var(--shadow-neumorphic-out);
-  --shadow-button-hover: var(--shadow-neumorphic-out-hover);
-
-  --shadow-architectural: 9px 9px 18px rgba(27, 70, 136, 0.15);
-
-  /* Grid */
-  --grid-color: rgba(27, 70, 136, 0.08);
-  /* Subtle blue grid on beige */
-  --grid-color-blueprint: rgba(187, 205, 243, 0.15);
-
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 3rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-
-  /* Transitions */
-  --transition-fast: 0.1s ease-out;
-  /* Snappier */
-  --transition-normal: 0.2s ease-out;
-  --transition-slow: 0.3s ease-out;
-
-  /* Container */
+  /* ===== LAYOUT ===== */
+  --sidebar-width: 260px;
+  --sidebar-width-collapsed: 80px;
   --container-max: 1200px;
-  --container-padding: 1rem;
+  --container-padding: 1.5rem;
 
-  /* Focus */
-  --focus-outline: 3px solid var(--color-blueprint);
+  /* ===== BORDERS ===== */
+  --stroke-thin: 1px;
+  --stroke-medium: 2px;
+  --stroke-thick: 3px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* ===== SPACING (8px grid) ===== */
+  --space-1: 0.5rem;
+  /* 8px */
+  --space-2: 1rem;
+  /* 16px */
+  --space-3: 1.5rem;
+  /* 24px */
+  --space-4: 2rem;
+  /* 32px */
+  --space-5: 2.5rem;
+  /* 40px */
+  --space-6: 3rem;
+  /* 48px */
+  --space-8: 4rem;
+  /* 64px */
+  --space-10: 5rem;
+  /* 80px */
+  --space-12: 6rem;
+  /* 96px */
+
+  /* ===== GRID PATTERN ===== */
+  --grid-size: 20px;
+  --grid-color: rgba(187, 205, 243, 0.4);
+  --grid-color-subtle: rgba(27, 70, 136, 0.08);
+
+  /* ===== TRANSITIONS ===== */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* ===== SHADOWS (minimal, architectural) ===== */
+  --shadow-sm: 0 1px 2px rgba(16, 47, 93, 0.08);
+  --shadow-md: 0 4px 12px rgba(16, 47, 93, 0.12);
+  --shadow-lg: 0 8px 24px rgba(16, 47, 93, 0.16);
+
+  /* ===== FOCUS ===== */
+  --focus-ring: 0 0 0 3px var(--blue-light);
+  --focus-outline: 3px solid var(--navy-primary);
   --focus-offset: 2px;
+
+  /* ===== ACCENT GRADIENTS ===== */
+  --gradient-peach: linear-gradient(135deg, #f5e2e0 0%, #f5f0e0 100%);
+  --gradient-peach-subtle: linear-gradient(
+    135deg,
+    rgba(245, 226, 224, 0.3) 0%,
+    rgba(245, 240, 224, 0.3) 100%
+  );
+  --gradient-accent-border: linear-gradient(
+    135deg,
+    var(--peach) 0%,
+    var(--warm-neutral) 50%,
+    var(--blue-light) 100%
+  );
+  --gradient-navy: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-dark) 100%);
+  --gradient-text: linear-gradient(
+    135deg,
+    var(--navy-primary) 0%,
+    #2d5aa0 50%,
+    var(--navy-primary) 100%
+  );
+
+  /* ===== GLOW EFFECTS ===== */
+  --glow-peach: 0 0 20px rgba(245, 226, 224, 0.5);
+  --glow-peach-lg: 0 0 40px rgba(245, 226, 224, 0.6);
+  --glow-navy: 0 0 20px rgba(27, 70, 136, 0.3);
+  --glow-navy-lg: 0 0 40px rgba(27, 70, 136, 0.4);
+  --glow-warm: 0 0 30px rgba(245, 240, 224, 0.5);
+
+  /* ===== ENHANCED SHADOWS ===== */
+  --shadow-elevated: 0 8px 30px rgba(16, 47, 93, 0.12), 0 2px 8px rgba(16, 47, 93, 0.08);
+  --shadow-elevated-hover: 0 16px 50px rgba(16, 47, 93, 0.18), 0 4px 12px rgba(16, 47, 93, 0.1);
+  --shadow-accent: 0 4px 20px rgba(245, 226, 224, 0.4);
+
+  /* ===== ANIMATION SPRINGS ===== */
+  --spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --spring-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring-snappy: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ===== MORPH ANIMATION VALUES ===== */
+  --morph-scale-start: 0.92;
+  --morph-rotate-start: -2deg;
+  --morph-duration: 0.6s;
 }
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --transition-fast: 0s;
-    --transition-normal: 0s;
-    --transition-slow: 0s;
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
   }
 }

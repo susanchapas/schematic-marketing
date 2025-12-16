@@ -6,6 +6,7 @@
   padding: var(--space-10) 0 var(--space-8);
   background: var(--offwhite);
   position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -21,12 +22,25 @@
 
 .hero .h1 {
   position: relative;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
+  display: inline-block;
 }
 
 .hero .text-lead {
   position: relative;
   max-width: 600px;
+}
+
+.accentBar {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #f5e2e0, #f5f0e0);
+  border-radius: 2px;
+  margin-bottom: var(--space-4);
+}
+
+.servicesSection {
+  padding: var(--space-10) 0;
 }
 
 .ctaSection {

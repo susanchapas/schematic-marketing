@@ -1,63 +1,37 @@
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styles from './PortfolioCard.module.css';
 
-export interface PortfolioProject {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  imageUrl: string;
-  tags: string[];
-}
-
 interface PortfolioCardProps {
-  project: PortfolioProject;
+  title: string;
+  category: string;
+  description?: string;
+  href?: string;
+  metrics?: string;
 }
 
-export default function PortfolioCard({ project }: PortfolioCardProps) {
+export default function PortfolioCard({
+  title,
+  category,
+  description,
+  href = '/contact',
+  metrics,
+}: PortfolioCardProps) {
   return (
-    <article className={styles.card}>
-      <div className={styles.imageWrapper}>
-        <Image
-          src={project.imageUrl}
-          alt={`${project.title} project showcase`}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className={styles.image}
-        />
-        <div className={styles.overlay}>
-          <span className={styles.category}>{project.category}</span>
+    <motion.article className={styles.card} whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
+      <Link href={href} className={styles.cardLink}>
+        <div className={styles.content}>
+          <span className={styles.category}>{category}</span>
+          <h3 className={styles.title}>{title}</h3>
+          {description && <p className={styles.description}>{description}</p>}
+          {metrics && <p className={styles.metrics}>{metrics}</p>}
         </div>
-      </div>
-      <div className={styles.content}>
-        <h3 className={styles.title}>{project.title}</h3>
-        <p className={styles.description}>{project.description}</p>
-        <div className={styles.tags}>
-          {project.tags.map(tag => (
-            <span key={tag} className={styles.tag}>
-              {tag}
-            </span>
-          ))}
-        </div>
-        <Link href={`/portfolio#${project.id}`} className={styles.link}>
-          View Project
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </Link>
-      </div>
-    </article>
+        <span className={styles.arrow} aria-hidden="true">
+          →
+        </span>
+      </Link>
+    </motion.article>
   );
 }
