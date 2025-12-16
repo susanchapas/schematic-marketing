@@ -163,7 +163,7 @@
 }
 
 .copyright p {
-  color: rgba(187, 205, 243, 0.6);
+  color: rgba(187, 205, 243, 0.8);
   font-size: 0.8125rem;
   font-family: var(--font-mono);
 }

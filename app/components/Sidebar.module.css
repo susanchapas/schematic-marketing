@@ -150,7 +150,7 @@
   right: 0;
   height: 64px;
   background: var(--navy-dark);
-  z-index: 1000;
+  z-index: 9999;
   /* Increased z-index to be above everything */
   padding: 0 var(--space-3);
   align-items: center;

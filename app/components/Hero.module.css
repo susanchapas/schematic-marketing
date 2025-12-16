@@ -5,6 +5,7 @@
   padding: var(--space-8) 0;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {

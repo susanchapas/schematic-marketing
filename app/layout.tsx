@@ -80,6 +80,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export const viewport: Viewport = {

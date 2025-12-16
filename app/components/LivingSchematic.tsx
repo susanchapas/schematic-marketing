@@ -251,7 +251,7 @@ export default function LivingSchematic({ className = '' }: LivingSchematicProps
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      style={{ width: '100%', height: 'auto', maxWidth: '100%' }}
+      style={{ width: '100%', height: 'auto', maxWidth: '100%', overflow: 'hidden' }}
       aria-hidden="true"
     >
       {/* ===== FILTERS & DEFINITIONS ===== */}
