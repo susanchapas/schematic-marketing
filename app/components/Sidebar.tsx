@@ -53,11 +53,11 @@ export default function Sidebar() {
       <header className={styles.mobileHeader}>
         <Link href="/" className={styles.mobileLogo} aria-label="Schematic Marketing Home">
           <Image
-            src="/schematic marketing logo white.png"
+            src="/NEW schematic white logo.png"
             alt="Schematic Marketing"
-            width={150}
+            width={113}
             height={55}
-            className={styles.logoImage}
+            className={styles.mobileLogoImage}
             priority
           />
         </Link>
@@ -83,9 +83,9 @@ export default function Sidebar() {
         <div className={styles.sidebarInner}>
           <Link href="/" className={styles.logo} aria-label="Schematic Marketing Home">
             <Image
-              src="/schematic marketing logo white.png"
+              src="/NEW schematic white logo.png"
               alt="Schematic Marketing"
-              width={200}
+              width={152}
               height={74}
               className={styles.logoImage}
               priority

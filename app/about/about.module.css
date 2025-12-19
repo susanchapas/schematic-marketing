@@ -81,8 +81,9 @@
 }
 
 .imagePlaceholder {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
   border: var(--stroke-thin) solid var(--border-stroke);
   border-radius: var(--radius-sm);
   display: flex;
@@ -90,11 +91,8 @@
   justify-content: center;
   color: var(--navy-primary);
   background: #ffffff;
-}
-
-.imagePlaceholder svg {
-  width: 160px;
-  height: 160px;
+  overflow: hidden;
+  position: relative;
 }
 
 .founderContent .h2 {

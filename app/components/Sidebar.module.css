@@ -166,6 +166,17 @@
 .mobileLogo {
   display: block;
   text-decoration: none;
+  /* Ensure the link doesn't collapse */
+  line-height: 0;
+}
+
+.mobileLogoImage {
+  width: auto;
+  height: auto;
+  max-height: 40px;
+  /* Constrain height to fit in header */
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* ===== MENU TOGGLE ===== */

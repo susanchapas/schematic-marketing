@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import MorphCard from '../components/MorphCard';
@@ -105,23 +106,12 @@ export default function AboutPage() {
           <div className={styles.founderGrid}>
             <AnimatedSection className={styles.founderImage} direction="left">
               <div className={styles.imagePlaceholder}>
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect
-                    x="20"
-                    y="20"
-                    width="160"
-                    height="160"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                  <circle cx="100" cy="80" r="35" stroke="currentColor" strokeWidth="1" />
-                  <path
-                    d="M50 180 Q100 130 150 180"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    fill="none"
-                  />
-                </svg>
+                <Image
+                  src="/susan profile pic.jpg"
+                  alt="Susan Chapas, Founder of Schematic Marketing"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
             </AnimatedSection>
             <div className={styles.founderContent}>

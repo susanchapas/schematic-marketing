@@ -26,9 +26,9 @@ export default function Footer() {
           <div className={styles.brand}>
             <Link href="/" className={styles.logo} aria-label="Schematic Marketing Home">
               <Image
-                src="/schematic marketing logo white.png"
+                src="/NEW schematic white logo.png"
                 alt="Schematic Marketing"
-                width={200}
+                width={152}
                 height={74}
                 className={styles.logoImage}
               />
