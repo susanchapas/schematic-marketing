@@ -33,9 +33,9 @@ export default function AnimatedSection({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, ...offset, scale: 0.95, rotate: -1 }}
-      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, rotate: 0 }}
-      viewport={{ margin: '-100px' }}
+      initial={{ opacity: 0, ...offset }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ margin: '-100px', once: true }}
       transition={{
         duration: 0.6,
         delay,

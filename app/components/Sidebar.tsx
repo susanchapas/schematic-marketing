@@ -53,7 +53,7 @@ export default function Sidebar() {
       <header className={styles.mobileHeader}>
         <Link href="/" className={styles.mobileLogo} aria-label="Schematic Marketing Home">
           <Image
-            src="/NEW schematic white logo.png"
+            src="/logo.webp"
             alt="Schematic Marketing"
             width={113}
             height={55}
@@ -83,7 +83,7 @@ export default function Sidebar() {
         <div className={styles.sidebarInner}>
           <Link href="/" className={styles.logo} aria-label="Schematic Marketing Home">
             <Image
-              src="/NEW schematic white logo.png"
+              src="/logo.webp"
               alt="Schematic Marketing"
               width={152}
               height={74}

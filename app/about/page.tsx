@@ -107,10 +107,12 @@ export default function AboutPage() {
             <AnimatedSection className={styles.founderImage} direction="left">
               <div className={styles.imagePlaceholder}>
                 <Image
-                  src="/susan profile pic.jpg"
+                  src="/susan-profile.webp"
                   alt="Susan Chapas, Founder of Schematic Marketing"
                   fill
+                  sizes="(max-width: 768px) 100vw, 400px"
                   style={{ objectFit: 'cover' }}
+                  priority
                 />
               </div>
             </AnimatedSection>

@@ -28,10 +28,10 @@ export default function MorphCard({
   return (
     <MotionComponent
       className={className}
-      initial={{ opacity: 0, scale: 0.92, rotate: -2, y: 30 }}
-      whileInView={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       whileHover={{ scale: hoverScale, y: -4 }}
-      viewport={{ margin: '-100px' }}
+      viewport={{ margin: '-100px', once: true }}
       transition={{
         duration: 0.5,
         delay,

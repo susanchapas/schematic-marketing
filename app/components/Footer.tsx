@@ -26,11 +26,12 @@ export default function Footer() {
           <div className={styles.brand}>
             <Link href="/" className={styles.logo} aria-label="Schematic Marketing Home">
               <Image
-                src="/NEW schematic white logo.png"
+                src="/logo.webp"
                 alt="Schematic Marketing"
                 width={152}
                 height={74}
                 className={styles.logoImage}
+                loading="lazy"
               />
             </Link>
             <p className={styles.tagline}>Strategy With Architectural Precision.</p>
