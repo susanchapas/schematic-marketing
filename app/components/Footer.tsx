@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import styles from './Footer.module.css';
@@ -24,18 +25,13 @@ export default function Footer() {
         <AnimatedSection className={styles.footerMain}>
           <div className={styles.brand}>
             <Link href="/" className={styles.logo} aria-label="Schematic Marketing Home">
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <rect width="40" height="40" rx="4" fill="#ffffff" />
-                <path d="M12 28V12h4l4 10 4-10h4v16h-3V18l-3.5 9h-3L15 18v10h-3z" fill="#102f5d" />
-              </svg>
-              <span>Schematic Marketing</span>
+              <Image
+                src="/schematic marketing logo white.png"
+                alt="Schematic Marketing"
+                width={200}
+                height={74}
+                className={styles.logoImage}
+              />
             </Link>
             <p className={styles.tagline}>Strategy With Architectural Precision.</p>
           </div>
@@ -67,13 +63,12 @@ export default function Footer() {
           </nav>
 
           <div className={styles.social}>
-            <motion.a
+            <a
               href="https://www.linkedin.com/company/schematic-marketing/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow us on LinkedIn"
               className={styles.socialLink}
-              whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -3 }}
             >
               <svg
                 width="20"
@@ -90,14 +85,13 @@ export default function Footer() {
                 <rect x="2" y="9" width="4" height="12" />
                 <circle cx="4" cy="4" r="2" />
               </svg>
-            </motion.a>
-            <motion.a
+            </a>
+            <a
               href="https://www.instagram.com/schematicmarketing/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow us on Instagram"
               className={styles.socialLink}
-              whileHover={shouldReduceMotion ? {} : { scale: 1.1, y: -3 }}
             >
               <svg
                 width="20"
@@ -114,7 +108,7 @@ export default function Footer() {
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg>
-            </motion.a>
+            </a>
           </div>
         </AnimatedSection>
 

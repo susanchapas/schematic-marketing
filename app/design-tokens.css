@@ -138,6 +138,27 @@
   --morph-scale-start: 0.92;
   --morph-rotate-start: -2deg;
   --morph-duration: 0.6s;
+
+  /* ===== MISSING TOKENS ===== */
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-3);
+  --space-lg: var(--space-6);
+  --space-xl: var(--space-8);
+  --space-2xl: var(--space-10);
+
+  --bg-surface: #ffffff;
+
+  --shadow-extrude: 0 4px 12px rgba(16, 47, 93, 0.15);
+  --shadow-extrude-sm: 0 2px 6px rgba(16, 47, 93, 0.1);
+
+  --color-cloud-blue: #e0eaf5;
+  --color-drafting: #bbcdf3;
+  --color-blueprint: #1b4688;
+  --border-subtle: rgba(27, 70, 136, 0.1);
 }
 
 /* Reduced motion preference */

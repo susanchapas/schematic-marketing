@@ -2,6 +2,9 @@
 
 import { useState, FormEvent } from 'react';
 import styles from './ContactForm.module.css';
+import { FormInput } from './ui/FormInput';
+import { FormSelect } from './ui/FormSelect';
+import { FormTextarea } from './ui/FormTextarea';
 
 interface FormData {
   name: string;
@@ -20,6 +23,24 @@ interface FormErrors {
 }
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+
+const PROJECT_TYPE_OPTIONS = [
+  { value: 'web-development', label: 'Web Development' },
+  { value: 'social-media', label: 'Social Media Management' },
+  { value: 'graphic-design', label: 'Graphic Design' },
+  { value: 'branding', label: 'Brand Strategy' },
+  { value: 'seo', label: 'SEO Optimization' },
+  { value: 'event-planning', label: 'Event Planning' },
+  { value: 'other', label: 'Other' },
+];
+
+const BUDGET_OPTIONS = [
+  { value: 'under-5k', label: 'Under $5,000' },
+  { value: '5k-10k', label: '$5,000 - $10,000' },
+  { value: '10k-25k', label: '$10,000 - $25,000' },
+  { value: '25k-50k', label: '$25,000 - $50,000' },
+  { value: 'over-50k', label: 'Over $50,000' },
+];
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -158,153 +179,70 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className={`surface ${styles.form}`} noValidate>
       <div className={styles.formGrid}>
-        <div className="form-group">
-          <label htmlFor="name" className="form-label form-label--required">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="form-input"
-            aria-invalid={errors.name ? 'true' : 'false'}
-            aria-describedby={errors.name ? 'name-error' : undefined}
-            autoComplete="name"
-            required
-          />
-          {errors.name && (
-            <span id="name-error" className="form-error" role="alert">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" />
-              </svg>
-              {errors.name}
-            </span>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="email" className="form-label form-label--required">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="form-input"
-            aria-invalid={errors.email ? 'true' : 'false'}
-            aria-describedby={errors.email ? 'email-error' : undefined}
-            autoComplete="email"
-            required
-          />
-          {errors.email && (
-            <span id="email-error" className="form-error" role="alert">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" />
-              </svg>
-              {errors.email}
-            </span>
-          )}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="company" className="form-label">
-            Company
-          </label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            value={formData.company}
-            onChange={handleChange}
-            className="form-input"
-            autoComplete="organization"
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="projectType" className="form-label">
-            Project Type
-          </label>
-          <select
-            id="projectType"
-            name="projectType"
-            value={formData.projectType}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">Select a service</option>
-            <option value="web-development">Web Development</option>
-            <option value="social-media">Social Media Management</option>
-            <option value="graphic-design">Graphic Design</option>
-            <option value="branding">Brand Strategy</option>
-            <option value="seo">SEO Optimization</option>
-            <option value="event-planning">Event Planning</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="budget" className="form-label">
-            Budget Range
-          </label>
-          <select
-            id="budget"
-            name="budget"
-            value={formData.budget}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">Select a range</option>
-            <option value="under-5k">Under $5,000</option>
-            <option value="5k-10k">$5,000 - $10,000</option>
-            <option value="10k-25k">$10,000 - $25,000</option>
-            <option value="25k-50k">$25,000 - $50,000</option>
-            <option value="over-50k">Over $50,000</option>
-          </select>
-        </div>
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="message" className="form-label form-label--required">
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
+        <FormInput
+          label="Name"
+          id="name"
+          name="name"
+          value={formData.name}
           onChange={handleChange}
-          className="form-textarea"
-          rows={6}
-          aria-invalid={errors.message ? 'true' : 'false'}
-          aria-describedby={errors.message ? 'message-error' : undefined}
-          placeholder="Tell us about your project, goals, and timeline..."
+          error={errors.name}
+          autoComplete="name"
           required
         />
-        {errors.message && (
-          <span id="message-error" className="form-error" role="alert">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" />
-            </svg>
-            {errors.message}
-          </span>
-        )}
+
+        <FormInput
+          label="Email"
+          id="email"
+          name="email"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          error={errors.email}
+          autoComplete="email"
+          required
+        />
+
+        <FormInput
+          label="Company"
+          id="company"
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          autoComplete="organization"
+        />
+
+        <FormSelect
+          label="Project Type"
+          id="projectType"
+          name="projectType"
+          value={formData.projectType}
+          onChange={handleChange}
+          options={PROJECT_TYPE_OPTIONS}
+          placeholder="Select a service"
+        />
+
+        <FormSelect
+          label="Budget Range"
+          id="budget"
+          name="budget"
+          value={formData.budget}
+          onChange={handleChange}
+          options={BUDGET_OPTIONS}
+          placeholder="Select a range"
+        />
       </div>
+
+      <FormTextarea
+        label="Message"
+        id="message"
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        error={errors.message}
+        rows={6}
+        placeholder="Tell us about your project, goals, and timeline..."
+        required
+      />
 
       {/* Honeypot field for spam prevention */}
       <div className={styles.honeypot} aria-hidden="true">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Sidebar.module.css';
@@ -51,18 +52,14 @@ export default function Sidebar() {
       {/* Mobile Header */}
       <header className={styles.mobileHeader}>
         <Link href="/" className={styles.mobileLogo} aria-label="Schematic Marketing Home">
-          <svg
-            width="36"
-            height="36"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <rect width="40" height="40" rx="4" fill="#1b4688" />
-            <path d="M12 28V12h4l4 10 4-10h4v16h-3V18l-3.5 9h-3L15 18v10h-3z" fill="#ffffff" />
-          </svg>
-          <span>Schematic</span>
+          <Image
+            src="/schematic marketing logo white.png"
+            alt="Schematic Marketing"
+            width={150}
+            height={55}
+            className={styles.logoImage}
+            priority
+          />
         </Link>
 
         <button
@@ -85,18 +82,14 @@ export default function Sidebar() {
       <aside className={styles.sidebar}>
         <div className={styles.sidebarInner}>
           <Link href="/" className={styles.logo} aria-label="Schematic Marketing Home">
-            <svg
-              width="40"
-              height="40"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <rect width="40" height="40" rx="4" fill="#ffffff" />
-              <path d="M12 28V12h4l4 10 4-10h4v16h-3V18l-3.5 9h-3L15 18v10h-3z" fill="#1b4688" />
-            </svg>
-            <span className={styles.logoText}>Schematic</span>
+            <Image
+              src="/schematic marketing logo white.png"
+              alt="Schematic Marketing"
+              width={200}
+              height={74}
+              className={styles.logoImage}
+              priority
+            />
           </Link>
 
           <nav className={styles.nav} aria-label="Primary navigation">

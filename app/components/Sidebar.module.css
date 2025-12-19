@@ -26,19 +26,15 @@
 
 /* ===== LOGO ===== */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  text-decoration: none;
+  display: block;
   margin-bottom: var(--space-8);
 }
 
-.logoText {
-  font-family: var(--font-sans);
-  font-weight: var(--weight-bold);
-  font-size: 1.25rem;
-  color: #ffffff;
-  letter-spacing: var(--tracking-tight);
+.logoImage {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* ===== NAVIGATION ===== */
@@ -168,13 +164,8 @@
 }
 
 .mobileLogo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
+  display: block;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: var(--weight-bold);
-  font-size: 1.125rem;
 }
 
 /* ===== MENU TOGGLE ===== */
